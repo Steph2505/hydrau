@@ -1293,6 +1293,66 @@ body.mobile-nav-active #mobile-nav-toggle {
   color: #fff;
 }
 
+.container .section{
+  display: flex;
+  justify-content: center;
+}
+.container .section h2{
+  background-color: #007E94;
+  color: white;
+  padding: 10px;
+  /* border-radius: 10%; */
+}
+
+.scroll-container {
+  overflow-x: auto;
+  white-space: nowrap;
+  padding: 10px;
+  scroll-behavior: smooth; /* Défilement fluide */
+}
+
+.scroll-content {
+  display: inline-flex;
+  gap: 15px;
+}
+
+.speaker {
+  flex: 0 0 auto;
+  width: 300px;
+  border-radius: 8px;
+  overflow: hidden;
+  text-align: center;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.speaker a img {
+  width: 100%;
+  height: 300px;
+}
+
+.detail {
+  padding: 10px;
+}
+
+.teams{
+  height: 400px;
+}
+.service-title{
+  bottom: 2%;
+  padding: 0 2%;
+}
+
+.service-title h5{
+  text-align: center;
+  background: rgba(34, 132, 78, 0.8);
+  margin: 0;
+  padding: 1%;
+  border-radius: 0%;
+  color: white;
+  font-weight: bold;
+}
+
 #subscribe input {
   background: #fff;
   color: #060c22;
@@ -1409,17 +1469,17 @@ body.mobile-nav-active #mobile-nav-toggle {
   text-align: center;
 }
 
-#contact .contact-info i {
+/* #contact .contact-info i {
   font-size: 48px;
   display: inline-block;
   margin-bottom: 10px;
   color: #f82249;
-}
+} */
 
 #contact .contact-info address,
 #contact .contact-info p {
   margin-bottom: 0;
-  color: #112363;
+  color: #007E94;
 }
 
 #contact .contact-info h3 {
@@ -1427,20 +1487,30 @@ body.mobile-nav-active #mobile-nav-toggle {
   margin-bottom: 15px;
   font-weight: bold;
   text-transform: uppercase;
-  color: #22844E;
+  color: black;
 }
 
 #contact .contact-info a {
-  color: black;
+  /* color: black; */
   text-decoration: none;
 }
-#contact .contact-info  .contact-phone p a i {
-  color:  #22844E;
+#contact .contact-info  .contact-phone p a i, .phone i {
+  color:  #007E94;
   font-size: 25px;
 }
 
+.send-form{
+  background-color: #007E94;
+  color: white;
+}
+
+.phone{
+  font-weight: bold;
+  color: #007E94;
+}
+
 #contact .contact-info a:hover {
-  color: #f82249;
+  color: #007E94;
 }
 
 #contact .contact-address,
@@ -1729,9 +1799,11 @@ body.mobile-nav-active #mobile-nav-toggle {
   left: 48px !important;
 }
 
-#jr{
-
 }
+#jr div img{
+  width: 100% !important;
+  height: 240px;
+  border-radius: 5%;
 }
 
 
