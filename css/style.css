@@ -39,7 +39,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Raleway", sans-serif;
+  font-family: "serif", sans-serif;
   font-weight: 400;
   margin: 0 0 20px 0;
   padding: 0;
@@ -72,7 +72,7 @@ h6 {
 .back-to-top {
   position: fixed;
   display: none;
-  background: #f82249;
+  background: black;
   color: #fff;
   width: 40px;
   height: 40px;
@@ -1466,7 +1466,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 #contact .contact-info {
   margin-bottom: 20px;
-  text-align: center;
+  /* text-align: center; */
 }
 
 /* #contact .contact-info i {
@@ -1479,19 +1479,19 @@ body.mobile-nav-active #mobile-nav-toggle {
 #contact .contact-info address,
 #contact .contact-info p {
   margin-bottom: 0;
-  color: #007E94;
+  color: #6c757d;
 }
 
 #contact .contact-info h3 {
   font-size: 18px;
-  margin-bottom: 15px;
+  /* margin-bottom: 15px; */
   font-weight: bold;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
   color: black;
 }
 
 #contact .contact-info a {
-  /* color: black; */
+  color: #6c757d;
   text-decoration: none;
 }
 #contact .contact-info  .contact-phone p a i, .phone i {
@@ -1506,7 +1506,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 .phone{
   font-weight: bold;
-  color: #007E94;
+  color: #6c757d;
 }
 
 #contact .contact-info a:hover {
@@ -1634,7 +1634,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 #footer .footer-top .social-links a:hover {
-  background: #f82249;
+  background: #22844E;
   color: #fff;
 }
 
@@ -2025,11 +2025,11 @@ h2{
 
 
         .testbtn1{
-            border-radius:5% !important;
+            border-radius:50% !important;
             background-color:green !important;
             display: flex;
-            width: 150px;
-            height: 40px;
+            width: 50px;
+            height: 50px;
             position: fixed;
             bottom: 60px;
             align-items: center;
@@ -2037,8 +2037,8 @@ h2{
             opacity: 0;
             pointer-events: none;
             transition: all .1s;
-            left: 85%;
-            top: 72%;
+            left: 95%;
+            top: 47%;
             border-color: green !important;
             color: white !important;
         }
@@ -2065,9 +2065,9 @@ h2{
         }
 
         @media only screen and (max-width: 990px) { .testbtn1{
-            left: 91%;
-            width: 115px;
-            height: 40px;
+            left: 80%;
+            width:50px;
+            height: 50px;
             color: #007E94 !important;
         }
                 .testbtn1 i{
