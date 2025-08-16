@@ -42,7 +42,7 @@
       <div id="logo" class="pull-left ">
         <!-- Uncomment below if you prefer to use a text logo -->
          <h1><a href="#main" class="fw-bold fs-3 log">HYDRAU-ENVIRONNEMENT<br>SERVICES</a></h1>
-        <a href="#intro" class="scrollto"><img src="img/8.jpg" alt="" width="50" title=""></a>
+        <a href="#intro" class="scrollto"><img src="img/logo_hydrau.jpg" alt="" title=""></a>
       </div>
 
       <nav id="nav-menu-container">
