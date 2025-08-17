@@ -712,7 +712,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 #etude .speaker {
   position: relative;
   overflow: hidden;
-  margin-bottom: 30px;
+  /* margin-bottom: 30px; */
 }
 
 #etude .speaker .details {
@@ -807,7 +807,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 #prestation .speaker {
   position: relative;
   overflow: hidden;
-  margin-bottom: 30px;
+  /* margin-bottom: 30px; */
 }
 
 #prestaion .speaker .details {
@@ -1300,7 +1300,8 @@ body.mobile-nav-active #mobile-nav-toggle {
 .container .section h2{
   background-color: #007E94;
   color: white;
-  padding: 10px;
+  padding: 5px;
+  font-family: serif;
   /* border-radius: 10%; */
 }
 
@@ -1339,7 +1340,7 @@ body.mobile-nav-active #mobile-nav-toggle {
   height: 400px;
 }
 .service-title{
-  bottom: 2%;
+  bottom: 1%;
   padding: 0 2%;
 }
 
@@ -1502,6 +1503,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 .send-form{
   background-color: #007E94;
   color: white;
+  font-family: serif;
 }
 
 .phone{
@@ -1639,7 +1641,8 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 #footer .footer-top h4 {
-  font-size: 25px;
+  font-size: 20px;
+  font-family: serif;
   font-weight: bold;
   color: #fff;
   text-transform: uppercase;
@@ -1674,12 +1677,13 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 #footer .footer-top .footer-links ul a {
   color: #fff;
-  font-size: 18px;
+  font-size: 15px;
+  font-family: serif;
   text-decoration: none;
 }
 
 #footer .footer-top .footer-links ul a:hover {
-  color: #f82249;
+  color: white;
 }
 
 #footer .footer-top .footer-contact {
@@ -1688,6 +1692,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 #footer .footer-top .footer-contact p {
   line-height: 26px;
+  font-family: serif;
 }
 
 #footer .footer-top .footer-newsletter {
@@ -1718,6 +1723,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 #footer .copyright {
   text-align: center;
   padding-top: 30px;
+  font-family: serif;
 }
 
 #footer .credits {
@@ -1950,6 +1956,7 @@ h2{
   border-radius: 5px;
   font-weight: bold;
   font-size: 18px;
+  margin-bottom: 0px;
 }
 
 
