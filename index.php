@@ -55,14 +55,10 @@
       </nav><!-- #nav-menu-container -->
     </div>
   </header><!-- #header -->
-
-  <!--==========================
-    Intro Section
-  ============================-->
   <div class="container mt-5">
     <div class="row">
       <div class="col-md-6 mt-5">
-              <img src="img/sl3.jpg" class="img-fluid ig" alt="..." >
+              <img src="img/sl3.jpg" class="img-fluid ig" alt="eau portable" >
         <a href=""><button class="btn text-white fw-bold text-center p-3 fs-2" id="message" >L'EAU C'EST LA VIE, MAIS SOUILLEE ELLE PEUT DETRUIRE DES VIES</button></a>
       </div>
       <div class="col-md-6 mt-5 som">
@@ -80,12 +76,6 @@
   </div>
 
   <main id="main">
-
-
-
-    <!--==========================
-      Speakers Section
-    ============================-->
     <section class="mt-1" id="service">
       <div class="container">
         <div class="section">
@@ -102,7 +92,7 @@
           </div>
           <div class="col-12 col-lg-4 col-md-4" id="jr">
             <div class="position-relative">
-              <img src="img/forage.jpg" class="hero-image img-fluid mt-5" alt="">
+              <img src="img/forage.jpg" class="hero-image img-fluid mt-5" alt="forage">
               <div class="position-absolute col-12 service-title">
                 <h5 class="">Réalisation, entretient et maintenance des forages et puits.</h5>
               </div>
@@ -389,8 +379,8 @@
   <script src="js/main.js"></script>
   <?php
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        $to = "contact@monsite.com"; // ton email de réception
-        $subject = "Nouveau message depuis le site";
+        $to = "stephlandriano@gmail.com"; // ton email de réception
+        $subject = "Nouveau message depuis le site...";
         $message = "Nom : " . htmlspecialchars($_POST['name']) . "\n" .
                   "Email : " . htmlspecialchars($_POST['email']) . "\n\n" .
                   "Message : " . htmlspecialchars($_POST['message']);
