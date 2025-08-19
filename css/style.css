@@ -1923,6 +1923,10 @@ body.mobile-nav-active #mobile-nav-toggle {
     position : relative;
     left : 40%;
   }
+  
+  .teams{
+    height: auto;
+  }
 }
 
 @media (max-width: 767px) {
