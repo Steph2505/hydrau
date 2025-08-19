@@ -1506,6 +1506,12 @@ body.mobile-nav-active #mobile-nav-toggle {
   font-family: serif;
 }
 
+.send-form:hover{
+  background-color: #22844E;
+  color: white;
+  font-family: serif;
+}
+
 .phone{
   font-weight: bold;
   color: #6c757d;
@@ -1747,9 +1753,12 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 #message{
   position: relative !important;
-  margin-top: -130px;
+  margin-top: -180px;
 }
 
+.ig{
+  height: 458px;
+}
 /*--------------------------------------------------------------
 # Responsive Media Queries
 --------------------------------------------------------------*/
@@ -1770,6 +1779,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 
       .ig{
         margin-top: -25px;
+        height:auto;
       }
     #message{
       color: red;

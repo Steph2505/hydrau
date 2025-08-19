@@ -28,9 +28,7 @@
   <link href="css/style.css" rel="stylesheet">
 
 </head>
-    <style>
 
-    </style>
 <body>
 
   <!--==========================
@@ -40,7 +38,6 @@
     <div class="container">
 
       <div id="logo" class="pull-left ">
-        <!-- Uncomment below if you prefer to use a text logo -->
          <h1><a href="#main" class="fw-bold fs-3 log">HYDRAU-ENVIRONNEMENT<br>SERVICES</a></h1>
         <a href="#intro" class="scrollto"><img src="img/logo_hydrau.jpg" alt="" title=""></a>
       </div>
@@ -49,12 +46,12 @@
         <ul class="nav-menu">
           <li class="menu-active me-5"><a href="#service">NOS SERVICES</a></li>
           <li class="me-5"><a href="#prestation">NOS REALISATIONS</a></li>
-          <!-- <li class=" me-5"><a href="#venue"></a></li>    -->
           <li><a href="#contact">CONTACT</a></li>
         </ul>
       </nav><!-- #nav-menu-container -->
     </div>
-  </header><!-- #header -->
+  </header>
+
   <div class="container mt-5">
     <div class="row">
       <div class="col-md-6 mt-5">
@@ -125,6 +122,7 @@
         </div>
       </div>
     </section>
+
     <section id="prestation" class="wow fadeInUp">
       <div class="container">
         <div class="section">
@@ -180,12 +178,6 @@
                 <h3>Plomberie</h3>
               </div>
             </div>
-            <!-- <div class="speaker">
-              <img src="img/cha.jpg" alt="Speaker 4">
-              <div class="detail">
-                <h3>Château d'eau avec panneau solaire</h3>
-              </div>
-            </div> -->
           </div>
         </div>
       </div>
@@ -225,7 +217,6 @@
       Contact Section
     ============================-->
     <section id="contact" class="section-bg wow fadeInUp">
-
       <div class="container">
 
         <div class="section">
@@ -257,31 +248,30 @@
             </div>
           </div>
           <div class="col-12 col-md-4">
-            <form action="send_mail.php" method="POST" class="p-4">
+            <form id="contact-form" class="p-4">
               <h3>CONTACT RAPIDE</h3>
               <div class="row mb-3" style="gap: 15px;">
-                 <div class="col-12 col-lg-12 col-md-12">
-                   <input type="text" class="form-control" name="name" placeholder="Votre nom" required>
-                 </div>
-                 <div class="col-12 col-lg-12 col-md-12">
-                   <input type="text" class="form-control" name="phone" placeholder="Téléphone" required>
-                 </div>
-                 <div class="col-12 col-lg-12 col-md-12">
-                   <input type="email" class="form-control" name="email" placeholder="Votre e-mail" required>
-                 </div>
-                 <div class="col-12 col-lg-12 col-md-12">
-                   <textarea name="message" class="form-control" placeholder="Votre message" required></textarea>
-                 </div>
+                <div class="col-12 col-lg-12 col-md-12">
+                  <input type="text" class="form-control" name="name" placeholder="Votre nom" required>
+                </div>
+                <div class="col-12 col-lg-12 col-md-12">
+                  <input type="text" class="form-control" name="phone" placeholder="Téléphone" required>
+                </div>
+                <div class="col-12 col-lg-12 col-md-12">
+                  <input type="email" class="form-control" name="email" placeholder="Votre e-mail" required>
+                </div>
+                <div class="col-12 col-lg-12 col-md-12">
+                  <textarea name="message" class="form-control" placeholder="Votre message" required></textarea>
+                </div>
               </div>
               <button type="submit" class="btn send-form">Soumettez vos besoins</button>
-          </form>
-
+              <p id="form-message" style="margin-top: 15px; color: green;"></p>
+            </form>
           </div>
-        </div>
         </div>
 
       </div>
-    </section><!-- #contact -->
+    </section>
 
   </main>
 
@@ -289,12 +279,9 @@
   <!--==========================
     Footer
   ============================-->
-      <div class="container d-flex justify-content-end">
-        <a class="btn testbtn1 " id="testbtn" href="https://api.whatsapp.com/send?phone=237673249694&text=Salut%0A" role="button" target="_blank"><i class="fa fa-whatsapp me-1 fw-bold" style="font-size: 30px;"></i></a>
-    </div>  
-      <!-- <div class="container d-flex justify-content-end">
-        <a class="btn testbtn " id="testbtn" href="https://web.facebook.com/profile.php?id=100063889519936" target="_blank" role="button"><i class="fa fa-facebook me-1 fs-2 fw-bold"></i> Facebook</a>
-    </div> -->
+  <div class="container d-flex justify-content-end">
+      <a class="btn testbtn1 " id="testbtn" href="https://api.whatsapp.com/send?phone=237673249694&text=Salut%0A" role="button" target="_blank"><i class="fa fa-whatsapp me-1 fw-bold" style="font-size: 30px;"></i></a>
+  </div>
 
 
   <footer id="footer">
@@ -304,11 +291,6 @@
 
           <div class="col-lg-3 col-md-6 footer-info">
             <h5 class="text-white fw-bold">HYDRAU-ENVIRONNEMENT<br>SERVICES</h5>
-            <!-- <p class=" text-white rounded-5">
-              &emsp; &emsp;Parceque <strong>  l'eau c'est la vie ,mais souillée elle peut détruire des vies</strong> , l'entreprise hydrau- environnement services est soucieuse de l'amélioration des conditions de vies des populations sur l'ensemble du triangle nationale camerounais, notamment en ce qui concerne l'accès à l'eau potable .<br><br>
-              Elle oeuvre de ce fait pour un accès à une eau de qualité et quantité pour tous, à travers une équipe d'ingénieurs et de techniciens hautement qualifiés dans le domaine de l'eau , géophysique, microbiologie et génie civil. <br><br>
-              Cette équipe prend connaissance de la problématique posée sur chaque site d'études et évalue les contraintes et les besoins en eau puis propose une solution optimale et durable pour le bien des clients et des populations.
-            </p> -->
           </div>
 
           <div class="col-lg-3 col-md-6 footer-links">
@@ -316,7 +298,6 @@
             <ul>
               <li> <a href="#service">NOS SERVICES</a></li>
               <li> <a href="#prestation">NOS REALISATIONS</a></li>
-              <!-- <li><a href="#">EQUIPE</a></li> -->
               <li> <a href="#contact">CONTACT</a></li>
             </ul>
           </div>
@@ -351,13 +332,7 @@
         Designed by <a href="#">Steph_Solutions</a>
       </div>
     </div>
-  </footer><!-- #footer -->
-
-
-    <script>
-
-
-    </script>
+  </footer>
 
   <a href="#" class="back-to-top"><i class="fa fa-angle-up"></i></a>
 
@@ -377,23 +352,25 @@
 
   <!-- Template Main Javascript File -->
   <script src="js/main.js"></script>
-  <?php
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        $to = "stephlandriano@gmail.com"; // ton email de réception
-        $subject = "Nouveau message depuis le site...";
-        $message = "Nom : " . htmlspecialchars($_POST['name']) . "\n" .
-                  "Email : " . htmlspecialchars($_POST['email']) . "\n\n" .
-                  "Message : " . htmlspecialchars($_POST['message']);
-        
-        $headers = "From: " . $_POST['email'];
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@2.4.1/dist/email.min.js"></script>
+<script>
+  (function(){
+    emailjs.init("N469QWuQ0w5xk269j"); // ⚠️ à remplacer par ton Public Key EmailJS
+  })();
+</script>
+<script>
+  document.getElementById("contact-form").addEventListener("submit", function(event) {
+    event.preventDefault();
 
-        if (mail($to, $subject, $message, $headers)) {
-            echo "Message envoyé avec succès !";
-        } else {
-            echo "Erreur lors de l'envoi.";
-        }
-    }
-  ?>
+    emailjs.sendForm("service_mkhqtjj", "template_u4vg5gd", this)
+      .then(function() {
+        document.getElementById("form-message").innerText = "✅ Mail envoyé avec succès !";
+        $(".send-form").prop("disabled", true);
+      }, function(error) {
+        document.getElementById("form-message").innerText = "❌ Erreur lors de l'envoi : " + JSON.stringify(error);
+      });
+  });
+</script>
   
 </body>
 
