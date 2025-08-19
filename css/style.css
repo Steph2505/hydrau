@@ -1918,6 +1918,11 @@ body.mobile-nav-active #mobile-nav-toggle {
   #faq #faq-list i {
     top: 13px;
   }
+
+  #header #logo img{
+    position : relative;
+    left : 23%;
+  }
 }
 
 @media (max-width: 767px) {
