@@ -181,13 +181,13 @@ window.addEventListener('scroll', ()=>{
 
         if (atEnd) {
           // retour au début
-          $scroll.stop(true).animate({ scrollLeft: 0 }, 800);
+          $scroll.stop(true).animate({ scrollLeft: 0 }, 200);
           el.scrollLeft = speed;
         } else {
           // avancer d’un pas, sans dépasser la fin
           let next = el.scrollLeft + step;
           if (next > max) next = max;
-          $scroll.stop(true).animate({ scrollLeft: next }, 800);
+          $scroll.stop(true).animate({ scrollLeft: next }, 200);
           el.scrollLeft += speed;
         }
       }, delay);
