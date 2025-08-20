@@ -43,7 +43,7 @@ h6,p,button {
   font-weight: 400;
   margin: 0 0 20px 0;
   padding: 0;
-  color: #0e1b4d;
+  color: #fff;
 }
 
 .main-page {
@@ -1310,6 +1310,7 @@ body.mobile-nav-active #mobile-nav-toggle {
   white-space: nowrap;
   padding: 10px;
   scroll-behavior: smooth; /* Défilement fluide */
+
 }
 
 .scroll-content {
@@ -1654,7 +1655,7 @@ body.mobile-nav-active #mobile-nav-toggle {
   text-transform: uppercase;
   position: relative;
   padding-bottom: 12px;
-  border-bottom: 2px solid #f82249;
+  border-bottom: 2px solid #22844E;
 }
 
 #footer .footer-top .footer-links {

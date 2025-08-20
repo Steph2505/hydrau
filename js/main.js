@@ -148,22 +148,47 @@ jQuery(document).ready(function( $ ) {
 
 
 
-        const toTop = document.querySelector('.testbtn');
+const toTop = document.querySelector('.testbtn');
 
-        window.addEventListener('scroll', ()=>{
-            if(window.pageYOffset > 100){
-                toTop.classList.add('active');
-            }else{
-                toTop.classList.add('active');
-            }
-        })
+window.addEventListener('scroll', ()=>{
+    if(window.pageYOffset > 100){
+        toTop.classList.add('active');
+    }else{
+        toTop.classList.add('active');
+    }
+})
 
-        const toTop1 = document.querySelector('.testbtn1');
+const toTop1 = document.querySelector('.testbtn1');
 
-        window.addEventListener('scroll', ()=>{
-            if(window.pageYOffset > 100){
-                toTop1.classList.add('active');
-            }else{
-                toTop1.classList.add('active');
-            }
-        })
+window.addEventListener('scroll', ()=>{
+    if(window.pageYOffset > 100){
+        toTop1.classList.add('active');
+    }else{
+        toTop1.classList.add('active');
+    }
+})
+
+  $(document).ready(function () {
+      const $scroll = $(".scroll-container");
+      const step = 320;      // ≈ largeur d’une carte
+      const delay = 2000;    // 3s
+      let speed = 1;    // vitesse
+
+      setInterval(function () {
+        const el = $scroll[0];
+        const max = el.scrollWidth - el.clientWidth; // fin réelle
+        const atEnd = Math.ceil(el.scrollLeft) >= Math.floor(max) - 1; // tolérance 1px
+
+        if (atEnd) {
+          // retour au début
+          $scroll.stop(true).animate({ scrollLeft: 0 }, 800);
+          el.scrollLeft = speed;
+        } else {
+          // avancer d’un pas, sans dépasser la fin
+          let next = el.scrollLeft + step;
+          if (next > max) next = max;
+          $scroll.stop(true).animate({ scrollLeft: next }, 800);
+          el.scrollLeft += speed;
+        }
+      }, delay);
+  });
