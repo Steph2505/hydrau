@@ -173,7 +173,7 @@ window.addEventListener('scroll', ()=>{
       const step = 320;      // ≈ largeur d’une carte
       const delay = 2000;    // 3s
       let speed = 1;    // vitesse
-
+       
       setInterval(function () {
         const el = $scroll[0];
         const max = el.scrollWidth - el.clientWidth; // fin réelle
@@ -191,4 +191,13 @@ window.addEventListener('scroll', ()=>{
           el.scrollLeft += speed;
         }
       }, delay);
+
+    // Quand l’utilisateur scrolle manuellement
+    // $scroll.on("scroll", function () {
+    //   console.log("loggggggg");
+      
+    //     clearInterval(setIntervalScroll);
+    //     clearTimeout(restartTimeout); // reset du timer
+    //     restartTimeout = setTimeout(startAutoScroll, 10000); // relance après 10s
+    // });
   });
