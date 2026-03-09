@@ -1,376 +1,2223 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="fr">
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hydrau-Environnement Services</title>
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <meta content="forage d'eau Yaoundé, forage Douala, Entreprise de forage au Cameroun, Traitement de l'eau Douala, Etude geophysique Yaoundé, forage villageois Cameroun" name="keywords">
-  <meta content="Réalisation des forages et Traitement de l'eau" name="description">
+  <meta name="keywords" content="forage d'eau Yaoundé, forage Douala, entreprise de forage au Cameroun, plomberie, traitement des eaux, assainissement, études géophysiques">
+  <meta name="description" content="Hydrau-Environnement SARL : forages, analyses, traitement et assainissement au Cameroun. Solutions durables en eau potable.">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-pVnzyP6fX2WmVH16KqkDZS08P3O79h+tZlKkwIO/B4Lf5kyzE+1MRhVulbkIW0wu1yaTtkvq1W7Fk8SBgjF3MQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    :root {
+      --primary-color: #007E94;
+      --secondary-color: #00A8C8;
+      --accent-color: #F94C4C;
+      --dark-bg: #0f1b2e;
+      --light-bg: #f8f9fa;
+      --text-dark: #2f3138;
+      --text-light: #6c757d;
+      --white: #ffffff;
+      --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      --shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.15);
+    }
 
-  <!-- Favicons -->
-  <link href="img/8.jpg" rel="icon">
-  <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800" rel="stylesheet">
+    html {
+      scroll-behavior: smooth;
+    }
 
-  <!-- Bootstrap CSS File -->
-  <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    body {
+      font-family: 'Poppins', sans-serif;
+      line-height: 1.6;
+      color: var(--text-dark);
+      background-color: var(--white);
+      overflow-x: hidden;
+    }
 
-  <!-- Libraries CSS Files -->
-  <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-  <link href="lib/animate/animate.min.css" rel="stylesheet">
-  <link href="lib/venobox/venobox.css" rel="stylesheet">
-  <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    a {
+      text-decoration: none;
+      color: inherit;
+      transition: all 0.3s ease;
+    }
 
-  <!-- Main Stylesheet File -->
-  <link href="css/style.css" rel="stylesheet">
+    button {
+      cursor: pointer;
+      border: none;
+      transition: all 0.3s ease;
+    }
 
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    section {
+      padding: 80px 0;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.95);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    @keyframes slideInLeft {
+      from {
+        opacity: 0;
+        transform: translateX(-50px) rotate(-2deg);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0) rotate(0deg);
+      }
+    }
+
+    @keyframes slideInRight {
+      from {
+        opacity: 0;
+        transform: translateX(50px) rotate(2deg);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0) rotate(0deg);
+      }
+    }
+
+    @keyframes bounceIn {
+      0% {
+        opacity: 0;
+        transform: scale(0.3) rotate(-5deg);
+      }
+      50% {
+        opacity: 1;
+        transform: scale(1.05) rotate(2deg);
+      }
+      70% {
+        transform: scale(0.95) rotate(-1deg);
+      }
+      100% {
+        opacity: 1;
+        transform: scale(1) rotate(0deg);
+      }
+    }
+
+    @keyframes slideUpBounce {
+      0% {
+        opacity: 0;
+        transform: translateY(50px) scale(0.9);
+      }
+      60% {
+        opacity: 1;
+        transform: translateY(-10px) scale(1.02);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    .animate {
+      animation: fadeInUp 0.8s ease forwards;
+      opacity: 0;
+      animation-fill-mode: both;
+    }
+
+    .animate.animated {
+      opacity: 1;
+    }
+
+    .animate-left {
+      animation: slideInLeft 0.8s ease forwards;
+      opacity: 0;
+      animation-fill-mode: both;
+    }
+
+    .animate-left.animated {
+      opacity: 1;
+    }
+
+    .animate-right {
+      animation: slideInRight 0.8s ease forwards;
+      opacity: 0;
+      animation-fill-mode: both;
+    }
+
+    .animate-bounce {
+      animation: bounceIn 0.8s ease forwards;
+      opacity: 0;
+      animation-fill-mode: both;
+    }
+
+    .animate-bounce.animated {
+      opacity: 1;
+    }
+
+    .animate-slide-bounce {
+      animation: slideUpBounce 0.8s ease forwards;
+      opacity: 0;
+      animation-fill-mode: both;
+    }
+
+    .animate-slide-bounce.animated {
+      opacity: 1;
+    }
+
+    /* État d'attente pour les animations */
+    .animate.queued,
+    .animate-left.queued,
+    .animate-right.queued,
+    .animate-bounce.queued,
+    .animate-slide-bounce.queued {
+      opacity: 0;
+    }
+
+    /* Animations échelonnées pour desktop */
+    @media (min-width: 1025px) {
+      .animate:nth-child(3n+1) { animation-delay: 0s; }
+      .animate:nth-child(3n+2) { animation-delay: 0.1s; }
+      .animate:nth-child(3n+3) { animation-delay: 0.2s; }
+
+      .animate:nth-child(3n+4) { animation-delay: 0.3s; }
+      .animate:nth-child(3n+5) { animation-delay: 0.4s; }
+      .animate:nth-child(3n+6) { animation-delay: 0.5s; }
+    }
+
+    /* Animations individuelles pour mobile */
+    @media (max-width: 768px) {
+      .animate { animation-delay: 0s; }
+      .animate:nth-child(1) { animation-delay: 0s; }
+      .animate:nth-child(2) { animation-delay: 0.2s; }
+      .animate:nth-child(3) { animation-delay: 0.4s; }
+      .animate:nth-child(4) { animation-delay: 0.6s; }
+      .animate:nth-child(5) { animation-delay: 0.8s; }
+      .animate:nth-child(6) { animation-delay: 1s; }
+    }
+
+    /* HEADER */
+    header {
+      background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+      padding: 1rem 0;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      box-shadow: var(--shadow);
+      transition: all 0.3s ease;
+    }
+
+    header.scrolled {
+      padding: 0.5rem 0;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .header-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--white);
+      font-weight: 700;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    .logo img {
+      max-width: 50px;
+      height: auto;
+    }
+
+    nav.desktop-nav {
+      display: flex;
+      gap: 2rem;
+    }
+
+    nav.desktop-nav a {
+      color: rgba(255, 255, 255, 0.8);
+      font-weight: 600;
+      font-size: 0.95rem;
+      position: relative;
+      padding-bottom: 5px;
+    }
+
+    nav.desktop-nav a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: var(--accent-color);
+      transition: width 0.3s ease;
+    }
+
+    nav.desktop-nav a:hover {
+      color: var(--white);
+    }
+
+    nav.desktop-nav a:hover::after {
+      width: 100%;
+    }
+
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 6px;
+      background: none;
+      cursor: pointer;
+    }
+
+    .menu-toggle span {
+      width: 25px;
+      height: 3px;
+      background-color: var(--white);
+      border-radius: 3px;
+      transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      transform-origin: center;
+    }
+
+    .menu-toggle.active span:nth-child(1) {
+      transform: rotate(45deg) translateY(10px) scaleX(0.8);
+    }
+
+    .menu-toggle.active span:nth-child(2) {
+      opacity: 0;
+      transform: scaleX(0);
+    }
+
+    .menu-toggle.active span:nth-child(3) {
+      transform: rotate(-45deg) translateY(-10px) scaleX(0.8);
+    }
+
+    .mobile-nav {
+      position: fixed;
+      top: 70px;
+      left: 0;
+      width: 100%;
+      background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+      padding: 2rem;
+      display: none;
+      flex-direction: column;
+      gap: 1rem;
+      z-index: 999;
+      box-shadow: var(--shadow);
+      transform: translateY(-20px);
+      opacity: 0;
+      transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
+
+    .mobile-nav.active {
+      display: flex;
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    .mobile-nav a {
+      color: var(--white);
+      font-weight: 600;
+      padding: 1rem;
+      transform: translateX(-30px);
+      opacity: 0;
+      transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
+
+    .mobile-nav.active a:nth-child(1) { transition-delay: 0.1s; }
+    .mobile-nav.active a:nth-child(2) { transition-delay: 0.2s; }
+    .mobile-nav.active a:nth-child(3) { transition-delay: 0.3s; }
+    .mobile-nav.active a:nth-child(4) { transition-delay: 0.4s; }
+    .mobile-nav.active a:nth-child(5) { transition-delay: 0.5s; }
+    .mobile-nav.active a:nth-child(6) { transition-delay: 0.6s; }
+
+    .mobile-nav.active a {
+      transform: translateX(0);
+      opacity: 1;
+    }
+
+    /* HERO */
+    .hero {
+      margin-top: 70px;
+      background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+      color: var(--white);
+      padding: 6rem 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .hero-text h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+
+    .hero-text .highlight {
+      color: var(--accent-color);
+    }
+
+    .hero-text p {
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+      opacity: 0.95;
+    }
+
+    .hero-image img {
+      width: 100%;
+      border-radius: 20px;
+      box-shadow: var(--shadow-lg);
+    }
+
+    /* SECTION HEADERS */
+    .section-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    .section-header h2 {
+      font-size: 2.5rem;
+      color: var(--primary-color);
+      margin-bottom: 1rem;
+      position: relative;
+      padding-bottom: 1rem;
+    }
+
+    .section-header h2::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 4px;
+      background: linear-gradient(90deg, var(--accent-color), var(--secondary-color));
+      border-radius: 2px;
+    }
+
+    .section-header p {
+      font-size: 1.1rem;
+      color: var(--text-light);
+    }
+
+    /* ABOUT */
+    .about {
+      background-color: var(--light-bg);
+    }
+
+    .about-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .about-image img {
+      width: 100%;
+      border-radius: 15px;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .about-text h3 {
+      font-size: 1.8rem;
+      color: var(--primary-color);
+      margin-bottom: 1.5rem;
+    }
+
+    .about-text p {
+      color: var(--text-dark);
+      line-height: 1.8;
+      margin-bottom: 1rem;
+    }
+
+    .about-text strong {
+      color: var(--secondary-color);
+    }
+
+    /* SERVICES */
+    .services {
+      background: linear-gradient(135deg, #f8f9fa 0%, #e8f5f7 100%);
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    .service-card {
+      background: var(--white);
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: all 0.3s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-10px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .service-image {
+      width: 100%;
+      height: 250px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .service-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .service-card:hover .service-image img {
+      transform: scale(1.1);
+    }
+
+    .service-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 126, 148, 0.9);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: all 0.3s ease;
+      padding: 1rem;
+    }
+
+    .service-card:hover .service-overlay {
+      opacity: 1;
+    }
+
+    .service-overlay-text {
+      color: var(--white);
+      text-align: center;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    .service-content {
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .service-content h3 {
+      font-size: 1.3rem;
+      color: var(--primary-color);
+      margin-bottom: 0.8rem;
+    }
+
+    .service-content p {
+      color: var(--text-light);
+      font-size: 0.95rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .service-btn {
+      background: linear-gradient(135deg, var(--accent-color), #FF6B6B);
+      color: var(--white);
+      border: none;
+      padding: 0.8rem 1.5rem;
+      border-radius: 25px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      margin-top: 1rem;
+    }
+
+    .service-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(249, 76, 76, 0.3);
+    }
+
+    .service-details {
+      max-height: 0;
+      overflow: hidden;
+      transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-radius: 0 0 15px 15px;
+      margin-top: -10px;
+      opacity: 0;
+    }
+
+    .service-details.expanded {
+      max-height: 500px;
+      opacity: 1;
+      padding: 2rem;
+      border-top: 1px solid rgba(0, 126, 148, 0.1);
+    }
+
+    .service-details h4 {
+      color: var(--primary-color);
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+      font-weight: 700;
+    }
+
+    .service-details p {
+      color: var(--text-dark);
+      line-height: 1.7;
+      margin-bottom: 1rem;
+    }
+
+    .service-details .close-btn {
+      background: var(--primary-color);
+      color: var(--white);
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      font-weight: 600;
+      cursor: pointer;
+      margin-top: 1rem;
+      transition: all 0.3s ease;
+    }
+
+    .service-details .close-btn:hover {
+      background: var(--secondary-color);
+    }
+
+    /* PORTFOLIO */
+    .portfolio {
+      background-color: var(--light-bg);
+    }
+
+    .portfolio-grid {
+      display: flex;              /* switch to flex for horizontal scroll */
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      gap: 2rem;
+      padding-bottom: 1rem;
+      /* hide native scrollbar */
+      -ms-overflow-style: none;  /* IE and Edge */
+      scrollbar-width: none;     /* Firefox */
+    }
+    .portfolio-grid::-webkit-scrollbar { display: none; }
+
+    .portfolio-item {
+      flex: 0 0 250px;
+      min-width: 250px;
+    }
+
+    .portfolio-item {
+      position: relative;
+      border-radius: 15px;
+      overflow: hidden;
+      height: 280px;
+      cursor: pointer;
+      box-shadow: var(--shadow);
+      transition: all 0.3s ease;
+    }
+
+    .portfolio-item:hover {
+      transform: scale(1.05);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .portfolio-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .portfolio-item:hover img {
+      transform: scale(1.1);
+    }
+
+    .portfolio-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 126, 148, 0.9);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: all 0.3s ease;
+      text-align: center;
+      color: var(--white);
+    }
+
+    .portfolio-item:hover .portfolio-overlay {
+      opacity: 1;
+    }
+
+    .portfolio-overlay h3 {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .portfolio-overlay p {
+      font-size: 0.85rem;
+      opacity: 0.9;
+    }
+
+    /* TESTIMONIALS */
+    .testimonials {
+      background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+      color: var(--white);
+    }
+
+    .testimonials .section-header h2,
+    .testimonials .section-header p {
+      color: var(--white);
+    }
+
+    .testimonials .section-header h2::after {
+      background: linear-gradient(90deg, var(--accent-color), rgba(255, 255, 255, 0.5));
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    .testimonial-card {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 15px;
+      padding: 2rem;
+      transition: all 0.3s ease;
+    }
+
+    .testimonial-card:hover {
+      background: rgba(255, 255, 255, 0.15);
+      transform: translateY(-10px);
+    }
+
+    .testimonial-stars {
+      color: #FFD700;
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+    }
+
+    .testimonial-text {
+      font-style: italic;
+      margin-bottom: 1.5rem;
+      line-height: 1.8;
+    }
+
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .author-avatar {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+    }
+
+    .author-info h4 {
+      color: var(--white);
+      font-size: 0.95rem;
+      margin-bottom: 0.2rem;
+    }
+
+    .author-info p {
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 0.85rem;
+    }
+
+    /* PARTNERS */
+    .partners {
+      background-color: var(--light-bg);
+    }
+
+    .partners-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .partner-item {
+      background: var(--white);
+      padding: 2rem;
+      border-radius: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 150px;
+      box-shadow: var(--shadow);
+      transition: all 0.3s ease;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .partner-item:hover {
+      transform: translateY(-10px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .partner-item img {
+      max-height: 180px;
+      max-width: 90%;
+    }
+
+    .partner-item p {
+      color: var(--primary-color);
+      font-weight: 700;
+      font-size: 1.2rem;
+    }
+
+    /* TEAM */
+    .team {
+      background-color: var(--light-bg);
+    }
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    .team-member {
+      background: var(--white);
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: all 0.3s ease;
+    }
+
+    .team-member:hover {
+      transform: translateY(-15px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .team-member-image {
+      width: 100%;
+      height: 300px;
+      overflow: hidden;
+    }
+
+    .team-member-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .team-member:hover .team-member-image img {
+      transform: scale(1.1);
+    }
+
+    .team-member-content {
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .team-member-content h3 {
+      font-size: 1.2rem;
+      color: var(--primary-color);
+      margin-bottom: 0.5rem;
+    }
+
+    .team-member-content p {
+      color: var(--text-light);
+    }
+
+    /* CONTACT */
+    .contact {
+      background: linear-gradient(135deg, var(--dark-bg) 0%, var(--primary-color) 100%);
+      color: var(--white);
+    }
+
+    .contact .section-header h2,
+    .contact .section-header p {
+      color: var(--white);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      margin-bottom: 3rem;
+    }
+
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .contact-item {
+      display: flex;
+      gap: 1.5rem;
+      padding: 1.5rem;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      transition: all 0.3s ease;
+    }
+
+    .contact-item:hover {
+      background: rgba(255, 255, 255, 0.15);
+      transform: translateX(10px);
+    }
+
+    .contact-icon {
+      width: 50px;
+      height: 50px;
+      background: linear-gradient(135deg, var(--accent-color), var(--secondary-color));
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      flex-shrink: 0;
+    }
+
+    .contact-item-content h3 {
+      color: var(--white);
+      font-size: 1rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .contact-item-content p {
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+    .contact-item-content a {
+      color: greenyellow;
+      font-weight: 600;
+    }
+
+    .contact-form {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      padding: 2rem;
+      border-radius: 15px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+      color: var(--white);
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 0.8rem;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.1);
+      color: var(--white);
+      font-family: 'Poppins', sans-serif;
+      transition: all 0.3s ease;
+    }
+
+    .form-group input::placeholder,
+    .form-group textarea::placeholder {
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      outline: none;
+      background: rgba(255, 255, 255, 0.15);
+      border-color: var(--accent-color);
+    }
+
+    .contact-form button {
+      width: 100%;
+      padding: 1rem;
+      background: linear-gradient(135deg, var(--accent-color), #FF6B6B);
+      color: var(--white);
+      border: none;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .contact-form button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(249, 76, 76, 0.3);
+    }
+
+    .contact-map {
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .contact-map iframe {
+      width: 100%;
+      height: 400px;
+      border: none;
+    }
+
+    /* FOOTER */
+    footer {
+      background: var(--dark-bg);
+      color: rgba(255, 255, 255, 0.7);
+      padding: 3rem 0 1rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .footer-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .footer-section h3 {
+      color: var(--white);
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+    }
+
+    .footer-section ul {
+      list-style: none;
+    }
+
+    .footer-section ul li {
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-section ul li a:hover {
+      color: var(--accent-color);
+    }
+
+    .footer-section p {
+      margin-bottom: 0.5rem;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .social-links a {
+      width: 40px;
+      height: 40px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--white);
+      transition: all 0.3s ease;
+    }
+
+    .social-links a:hover {
+      background: var(--accent-color);
+      transform: translateY(-5px);
+    }
+
+    .footer-bottom {
+      text-align: center;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      font-size: 0.9rem;
+    }
+
+    /* BUTTONS */
+    .back-to-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 50px;
+      height: 50px;
+      background: linear-gradient(135deg, var(--accent-color), #FF6B6B);
+      color: var(--white);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+      z-index: 500;
+      font-size: 1.5rem;
+    }
+
+    .back-to-top.show {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .back-to-top:hover {
+      transform: translateY(-5px);
+    }
+
+    .whatsapp-btn {
+      position: fixed;
+      bottom: 30px;
+      right: 90px;
+      width: 50px;
+      height: 50px;
+      background: #25D366;
+      color: var(--white);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 1.5rem;
+      box-shadow: var(--shadow-lg);
+      transition: all 0.3s ease;
+      z-index: 500;
+      text-decoration: none;
+    }
+    .whatsapp-btn i {
+      font-size: 1.8rem;
+      color: #fff;
+    }
+
+    .whatsapp-btn:hover {
+      transform: scale(1.1);
+    }
+
+    /* VISION & MISSION */
+    .vision-mission {
+      background: linear-gradient(135deg, #f8f9fa 0%, #e8f5f7 100%);
+      padding: 80px 0;
+    }
+
+    .vision-mission-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+      gap: 3rem;
+    }
+
+    .vision-card {
+      background: var(--white);
+      padding: 3rem 2rem;
+      border-radius: 20px;
+      box-shadow: var(--shadow);
+      text-align: center;
+      transition: all 0.3s ease;
+      border: 2px solid transparent;
+    }
+
+    .vision-card:hover {
+      transform: translateY(-10px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--primary-color);
+    }
+
+    .vision-icon {
+      font-size: 3rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .vision-card h3 {
+      color: var(--primary-color);
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      font-weight: 700;
+    }
+
+    .vision-card p {
+      color: var(--text-dark);
+      line-height: 1.7;
+      font-size: 1rem;
+    }
+
+    /* STATISTICS */
+    .statistics {
+      background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+      color: var(--white);
+      padding: 80px 0;
+    }
+
+    .statistics .section-header h2,
+    .statistics .section-header p {
+      color: var(--white);
+    }
+
+    .statistics .section-header h2::after {
+      background: linear-gradient(90deg, var(--accent-color), rgba(255, 255, 255, 0.5));
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+
+    .stat-card {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      padding: 2.5rem 2rem;
+      border-radius: 15px;
+      text-align: center;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      transition: all 0.3s ease;
+    }
+
+    .stat-card:hover {
+      background: rgba(255, 255, 255, 0.15);
+      transform: translateY(-10px);
+    }
+
+    .stat-number {
+      font-size: 3rem;
+      font-weight: 700;
+      color: greenyellow;
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+
+    .stat-label {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      color: var(--white);
+    }
+
+    .stat-description {
+      font-size: 0.9rem;
+      color: rgba(255, 255, 255, 0.8);
+      line-height: 1.4;
+    }
+    @media (max-width: 1024px) {
+      .hero-content,
+      .about-content,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-map iframe {
+        height: 300px;
+      }
+
+      section {
+        padding: 60px 0;
+      }
+
+      .section-header h2 {
+        font-size: 2rem;
+      }
+
+      .hero-text h1 {
+        font-size: 2.2rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      nav.desktop-nav {
+        display: none;
+      }
+
+      .menu-toggle {
+        display: flex;
+      }
+
+      .hero {
+        padding: 4rem 0;
+      }
+
+      .hero-text h1 {
+        font-size: 1.8rem;
+      }
+
+      .hero-text p {
+        font-size: 1rem;
+      }
+
+      section {
+        padding: 50px 0;
+      }
+
+      .section-header h2 {
+        font-size: 1.8rem;
+      }
+
+      .services-grid,
+      .partners-grid,
+      .team-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .portfolio-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .vision-mission-grid,
+      .stats-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .vision-card,
+      .stat-card {
+        padding: 2rem 1.5rem;
+      }
+
+      .stat-number {
+        font-size: 2.5rem;
+      }
+
+      .contact-map iframe {
+        height: 250px;
+      }
+
+      .whatsapp-btn {
+        bottom: 100px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        padding: 0 15px;
+      }
+
+      .hero-text h1 {
+        font-size: 1.5rem;
+      }
+
+      .section-header h2 {
+        font-size: 1.5rem;
+      }
+
+      .portfolio-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .back-to-top,
+      .whatsapp-btn {
+        width: 45px;
+        height: 45px;
+        font-size: 1.2rem;
+      }
+
+      .whatsapp-btn {
+        bottom: 75px;
+        right: 20px;
+      }
+
+      .back-to-top {
+        right: 20px;
+      }
+
+      .logo {
+        font-size: 1.2rem;
+      }
+    }
+  </style>
 </head>
-
 <body>
 
-  <!--==========================
-    Header
-  ============================-->
+  <!-- HEADER -->
   <header id="header">
     <div class="container">
-
-      <div id="logo" class="pull-left ">
-        <a href="#intro" class="logo-img"><img src="img/logo_hydrau.jpg" alt="" title=""></a>
+      <div class="header-content">
+        <div class="logo">
+          <img src="img/logo hydreau.jpeg" alt="Hydrau Logo">
+        </div>
+        <nav class="desktop-nav">
+          <a href="#services">Services</a>
+          <a href="#portfolio">Réalisations</a>
+          <a href="#testimonials">Témoignages</a>
+          <a href="#partners">Partenaires</a>
+          <a href="#team">Équipe</a>
+          <a href="#contact">Contact</a>
+        </nav>
+        <button class="menu-toggle" id="menuToggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
       </div>
-
-      <nav id="nav-menu-container">
-        <ul class="nav-menu">
-          <li class="menu-active me-5"><a href="#service">NOS SERVICES</a></li>
-          <li class="me-5"><a href="#prestation">NOS REALISATIONS</a></li>
-          <li><a href="#contact">CONTACT</a></li>
-        </ul>
-      </nav><!-- #nav-menu-container -->
     </div>
   </header>
 
-  <div class="container mt-5">
-    <div class="row">
-      <div class="col-md-6 mt-5">
-              <img src="img/sl3.jpg" class="img-fluid ig" alt="eau portable" >
-        <a href=""><button class="btn text-white fw-bold text-center p-3 fs-2" id="message" >L'EAU C'EST LA VIE, MAIS SOUILLEE ELLE PEUT DETRUIRE DES VIES</button></a>
-      </div>
-      <div class="col-md-6 mt-5 som">
-        <div class="section mt-1">
-          <h2 class="fs-4 h">QUI SOMMES NOUS ?</h2>
-        </div>
-        <p class="bg-light text-dark  p-3 rounded-5">
-          &emsp; &emsp;Parceque <strong>  l'eau c'est la vie ,mais souillée elle peut détruire des vies</strong> , l'entreprise <strong>HYDRAU-ENVIRONNEMENT SERVICES</strong> est soucieuse de l'amélioration des conditions de vies des populations sur l'ensemble du triangle nationale camerounais, notamment en ce qui concerne l'accès à l'eau potable .<br><br>
-          Elle oeuvre de ce fait pour un accès à une eau de qualité et en quantité pour tous, à travers une équipe d'ingénieurs et de techniciens hautement qualifiés dans le domaine de <strong>l'eau , géophysique, microbiologie et génie civil.</strong> <br><br>
-          Cette équipe prend connaissance de la problématique posée sur chaque site d'études, évalue les contraintes et les besoins en eau puis propose <strong>une solution optimale et durable</strong> pour le bien des clients et des populations.
-        </p>
-      </div>
-    </div>
-    
-  </div>
+  <nav class="mobile-nav" id="mobileNav">
+    <a href="#services">Services</a>
+    <a href="#portfolio">Réalisations</a>
+    <a href="#testimonials">Témoignages</a>
+    <a href="#partners">Partenaires</a>
+    <a href="#team">Équipe</a>
+    <a href="#contact">Contact</a>
+  </nav>
 
-  <main id="main">
-    <section class="mt-1" id="service">
-      <div class="container">
-        <div class="section">
-          <h2 class="">NOS SERVICES</h2>
-        </div>
-        <div class="row">
-          <div class="col-12 col-lg-4 col-md-4" id="jr">
-            <div class="position-relative">
-              <img src="img/etude1.jpg" class="hero-image img-fluid mt-5" alt="">
-              <div class="position-absolute col-12 service-title">
-                <h5 class="">Etudes géophysique.</h5>
-              </div>
-            </div>
-          </div>
-          <div class="col-12 col-lg-4 col-md-4" id="jr">
-            <div class="position-relative">
-              <img src="img/forage.jpg" class="hero-image img-fluid mt-5" alt="forage">
-              <div class="position-absolute col-12 service-title">
-                <h5 class="">Réalisation, entretient et maintenance des forages et puits.</h5>
-              </div>
-            </div>
-          </div>
-          <div class="col-12 col-lg-4 col-md-4" id="jr">
-            <div class="position-relative">
-              <img src="img/analyse.jpg" class="hero-image img-fluid mt-5" alt="">
-              <div class="position-absolute col-12 service-title">
-                <h5 class="">Traitements et analyses de la qualité de l'eau.</h5>
-              </div>
-            </div>
-          </div>
-          <div class="col-12 col-lg-4 col-md-4" id="jr">
-            <div class="position-relative">
-              <img src="img/elect.jpg" class="hero-image img-fluid mt-5" alt="">
-              <div class="position-absolute col-12 service-title">
-                <h5 class="">Construction des châteaux et installation des pompes électriques.</h5>
-              </div>
-            </div>
-          </div>
-          <div class="col-12 col-lg-4 col-md-4" id="jr">
-            <div class="position-relative">
-              <img src="img/forma.jpg" class="hero-image img-fluid mt-5" alt="">
-              <div class="position-absolute col-12 service-title">
-                <h5 class="">Assainissement, contre expertise, formation et conseils.</h5>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="prestation" class="wow fadeInUp">
-      <div class="container">
-        <div class="section">
-          <h2>NOS REALISATIONS</h2>
-        </div>
-        <div class="scroll-container">
-          <div class="scroll-content">
-            <div class="speaker">
-              <a href="img/e.jpg" class="venobox" data-gall="venue-gallery">
-                <img src="img/e.jpg" alt="Speaker 2">
-              </a>
-              <div class="detail">
-                <h3>Réalisation des forages</h3>
-              </div>
-            </div>
-            <div class="speaker">
-              <a href="img/4.jpg" class="venobox" data-gall="venue-gallery">
-                <img src="img/4.jpg" alt="Speaker 2">
-              </a>
-              <div class="detail">
-                <h3>Études géophysiques</h3>
-              </div>
-            </div>
-            <div class="speaker">
-              <a href="img/3.jpg" class="venobox" data-gall="venue-gallery">
-                <img src="img/3.jpg" alt="Speaker 2">
-              </a>
-              <div class="detail">
-                <h3>Prélèvement de l'eau pour <br>analyse</h3>
-              </div>
-            </div>
-            <div class="speaker">
-              <a href="img/15.jpg" class="venobox" data-gall="venue-gallery">
-                <img src="img/15.jpg" alt="Speaker 2">
-              </a>
-              <div class="detail">
-                <h3>Pompe à motricité humaines</h3>
-              </div>
-            </div>
-            <div class="speaker">
-              <a href="img/h.jpg" class="venobox" data-gall="venue-gallery">
-                <img src="img/h.jpg" alt="Speaker 2">
-              </a>
-              <div class="detail">
-                <h3>Château d'eaux</h3>
-              </div>
-            </div>
-            <div class="speaker">
-              <a href="img/16.jpg" class="venobox" data-gall="venue-gallery">
-                <img src="img/16.jpg" alt="Speaker 2">
-              </a>
-              <div class="detail">
-                <h3>Plomberie</h3>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </section>
-
-    <section id="venue" class="wow fadeInUp">
-
-      <div class="container">
-        <div class="section">
-          <h2>NOTRE EQUIPE</h2>
-        </div>
-      </div>
-
-      <div class="container venue-gallery-container">
-        <div class="row no-gutters">
-
-          <div class="col-lg-6 col-md-6">
-            <div class="venue-gallery">
-                <img src="img/j.jpg" alt="" width="550" height="300" class="img-fluid teams">
-              
-            </div>
-          </div>
-
-          <div class="col-lg-6 col-md-6">
-            <div class="venue-gallery">
-                <img src="img/17.jpg" alt="" width="550" height="300" class="img-fluid teams">
-              
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </section>
-
-    <!--==========================
-      Contact Section
-    ============================-->
-    <section id="contact" class="section-bg wow fadeInUp">
-      <div class="container">
-
-        <div class="section">
-          <h2>CONTACTEZ NOUS</h2>
-        </div>
-
-        <div class="row contact-info bg-light">
-          <div class="col-md-4">
-            <div class="contact-address p-4">
-              <address class=" fw-bold"><i class="fa fa-map-marker fs-3 me-2" style="color: #007E94;"></i>CAMEROUN, Yaoundé - Douala</address>
-              <br> 
-              <p><a href="tel:673249694" class="phone" style="color: #007E94;"><i class="fa fa-phone"></i> +237 673 249 694</a></p>
-              <br>
-              <p><i class="fa fa-envelope fs-3 me-2" style="color: #007E94;"></i><a href="mailto:hydrauenvironnement@gmail.com">hydrauenvironnement@gmail.com</a></p>
-              <br>
-              <p><i class="fa fa-facebook fs-3 me-2" style="color: #007E94;"></i><a href="https://web.facebook.com/profile.php?id=100063889519936">Facebook</a></p>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="contact-address p-4">
-                <iframe 
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8103648.681833592!2d12.294004100000002!3d7.369617500000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xa7e8e13d35f56ae3%3A0x5301640050b6177a!2sHydrau-environnement%20services!5e0!3m2!1sfr!2scm!4v1755374827531!5m2!1sfr!2scm" 
-                  width="100%" 
-                  height="100%" 
-                  style="border:0;" 
-                  allowfullscreen="" 
-                  loading="lazy">
-                </iframe>
-            </div>
-          </div>
-          <div class="col-12 col-md-4">
-            <form id="contact-form" class="p-4">
-              <h3>CONTACT RAPIDE</h3>
-              <div class="row mb-3" style="gap: 15px;">
-                <div class="col-12 col-lg-12 col-md-12">
-                  <input type="text" class="form-control" name="name" placeholder="Votre nom" required>
-                </div>
-                <div class="col-12 col-lg-12 col-md-12">
-                  <input type="text" class="form-control" name="phone" placeholder="Téléphone" required>
-                </div>
-                <div class="col-12 col-lg-12 col-md-12">
-                  <input type="email" class="form-control" name="email" placeholder="Votre e-mail" required>
-                </div>
-                <div class="col-12 col-lg-12 col-md-12">
-                  <textarea name="message" class="form-control" placeholder="Votre message" required></textarea>
-                </div>
-              </div>
-              <button type="submit" class="btn send-form">Soumettez vos besoins</button>
-              <p id="form-message" style="margin-top: 15px; color: green;"></p>
-            </form>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-  </main>
-
-
-  <!--==========================
-    Footer
-  ============================-->
-  <div class="container d-flex justify-content-end">
-      <a class="btn testbtn1 " id="testbtn" href="https://api.whatsapp.com/send?phone=237673249694&text=Salut%0A" role="button" target="_blank"><i class="fa fa-whatsapp fw-bold" style="font-size: 30px;"></i></a>
-  </div>
-
-
-  <footer id="footer">
-    <div class="footer-top">
-      <div class="container">
-        <div class="row">
-
-          <div class="col-lg-3 col-md-6 footer-info">
-            <h5 class="text-white fw-bold">HYDRAU-ENVIRONNEMENT<br>SERVICES</h5>
-          </div>
-
-          <div class="col-lg-3 col-md-6 footer-links">
-            <h4>NAVIGATIONS</h4>
-            <ul>
-              <li> <a href="#service">NOS SERVICES</a></li>
-              <li> <a href="#prestation">NOS REALISATIONS</a></li>
-              <li> <a href="#contact">CONTACT</a></li>
-            </ul>
-          </div>
-
-          <div class="col-lg-3 col-md-6 footer-contact">
-            <h4>CONTACT</h4>
-            <p class="m-0">
-              Cameroun, Yaoundé-Douala<br>
-              <strong><i class="fa fa-phone"></i></strong> +273 673 249 694<br>
-              <strong>Email:</strong> hydrauenvironnement@gmail.com<br>
-            </p>
-          </div>
-
-          <div class="col-lg-3 col-md-6 footer-contact">
-            <h4>Liens Sociaux</h4>
-              <div class="social-links">
-                <a href="https://web.facebook.com/100063889519936/posts/642131841259794/?mibextid=mna8qTP8xvtPE1tK&_rdc=1&_rdr" class="facebook"><i class="fa fa-facebook"></i></a>
-                <a href="https://api.whatsapp.com/send?phone=237673249694" class="instagram"><i class="fa fa-whatsapp"></i></a>
-                <a href="mailto:hydrauenvironnement@gmail.com" class="google-plus"><i class="fa fa-envelope"></i></a>
-              </div>
-          </div>
-
-        </div>
-      </div>
-    </div>
-
+  <!-- HERO -->
+  <section class="hero">
     <div class="container">
-      <div class="copyright">
-        &copy; Copyright <strong>HYDRAU-ENVIRONNEMENT SERVICES</strong>. All Rights Reserved
+      <div class="hero-content">
+        <div class="hero-text animate-left">
+          <h1><span class="">L'eau c'est la vie,</span><br>mais souillée elle peut <span class="">détruire des vies</span></h1>
+          <!-- <p>HYDRAU-ENVIRONNEMENT SERVICES œuvre pour l'amélioration des conditions de vie en garantissant l'accès à une eau potable de qualité.</p> -->
+          <a href="#contact" style="display: inline-block; margin-top: 1rem;">
+            <button style="background: var(--accent-color); color: white; padding: 1rem 2rem; border-radius: 8px; font-weight: 600; font-size: 1rem;">Demander un devis gratuit</button>
+          </a>
+        </div>
+        <div class="hero-image animate-right">
+          <img src="img/7.jpg" alt="Eau potable">
+        </div>
       </div>
-      <div class="credits">
-        Designed by <a href="#">Steph_Solutions</a>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about">
+    <div class="container">
+      <div class="about-content">
+        <div class="about-image animate-left">
+          <img src="img/etude1.jpg" alt="Études Géophysiques">
+        </div>
+        <div class="about-text animate-right">
+          <h3>Qui sommes-nous ?</h3>
+          <p><strong>HYDREAUSOL SARL</strong> est une entreprise camerounaise spécialisée dans les solutions d'eau potable. Depuis notre création, nous avons réalisé<strong> plus de 700 forages</strong> à travers les 10 régions du Cameroun, au service des <strong>particuliers, ONG, entreprises, agriculteurs et industriels.</strong>  d'amélioration des conditions de vie des populations camerounaises à travers un accès à l'eau potable de qualité.</p>
+          <p>De A à Z nous offrons des prestations en <strong> études géophysiques, réalisation des forages, analyse et traitement de l'eau, assainissement des eaux usées et entretien des ouvrages d'eau.</strong></p>
+          <p>Nos équipes d'ingénieurs et techniciens qualifiés prennent en compte la situation posée par chaque site d'étude, évaluent les containtes et les besoins en eau, puis proposent à chaque client une solution optimale, durable et garantie.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="services" id="services">
+    <div class="container">
+      <div class="section-header">
+        <h2>Nos Services</h2>
+        <p>Solutions complètes en eau et géophysique</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card animate-slide-bounce">
+          <div class="service-image">
+            <img src="img/etude_geophysique.jpeg" alt="Études géophysiques">
+          </div>
+          <div class="service-content">
+            <h3>Études Géophysiques</h3>
+            <p>Exploration professionnelle avec équipements modernes</p>
+            <button class="service-btn" onclick="toggleServiceDetails(this)">En savoir plus</button>
+          </div>
+          <div class="service-details" id="details-geophysique">
+            <p>Avant tout forage, une étude géophysique est indispensable pour identifier avec précision les zones les plus favorables à l'implantation d'un forage. Notre équipe réalise des prospections électriques et électromagnétiques du sous-sol afin de cartographier les nappes phréatiques, évaluer leur profondeur, leur épaisseur et estimer leur potentiel en eau.</p>
+            <p>Cette étape scientifique permet de maximiser les chances de succès du forage et d'optimiser votre investissement.</p>
+          </div>
+        </div>
+
+        <div class="service-card animate-slide-bounce" style="animation-delay: 0.1s;">
+          <div class="service-image">
+            <img src="img/forages.jpeg" alt="Forages">
+          </div>
+          <div class="service-content">
+            <h3>Réalisation des forages</h3>
+            <p>Réalisation, entretien et maintenance complets</p>
+            <button class="service-btn" onclick="toggleServiceDetails(this)">En savoir plus</button>
+          </div>
+          <div class="service-details" id="details-forages">
+            <p>Nous assurons la conception, la réalisation et l'équipement de forages d'eau à usage domestique, agricole ou industriel. Nos techniciens expérimentés utilisent des équipements de forage modernes adaptés aux conditions géologiques camerounaises.</p>
+            <p>Chaque forage est réalisé dans le strict respect des normes techniques pour garantir sa pérennité, son hygiène et la qualité de l'eau produite.</p>
+      
+          </div>
+        </div>
+
+        <div class="service-card animate-slide-bounce" style="animation-delay: 0.2s;">
+          <div class="service-image">
+            <img src="img/analyse.jpg" alt="Analyses">
+          </div>
+          <div class="service-content">
+            <h3>Analyse de la qualité de l'eau</h3>
+            <p>Traitement et analyses de la qualité</p>
+            <button class="service-btn" onclick="toggleServiceDetails(this)">En savoir plus</button>
+          </div>
+          <div class="service-details" id="details-analyses">
+            <p>La qualité de l'eau ne se voit pas à l'œil nu. Nos experts procèdent à des prélèvements rigoureux sur le terrain et réalisent des analyses complètes en laboratoire certifié.</p>
+            <p>Nous évaluons les paramètres physicochimiques et bactériologiques conformément aux normes de l'OMS et du Ministère de la Santé du Cameroun. Un certificat d'analyse vous est remis pour garantir la potabilité et la sécurité de votre eau.</p>
+          </div>
+        </div>
+
+        <div class="service-card animate-slide-bounce" style="animation-delay: 0.3s;">
+          <div class="service-image">
+            <img src="img/traitement_eau.jpeg" alt="Traitement de l'eau">
+          </div>
+          <div class="service-content">
+            <h3>Traitement de l'eau</h3>
+            <p>Installation et maintenance de systèmes de traitement</p>
+            <button class="service-btn" onclick="toggleServiceDetails(this)">En savoir plus</button>
+          </div>
+          <div class="service-details" id="details-traitement">
+            <p>Lorsque l'analyse révèle des paramètres hors normes, nous proposons des solutions de traitement adaptées à la nature de la contamination et au volume à traiter.</p>
+            <p>Notre équipe conçoit et installe des systèmes de traitement sur mesure : chloration, filtration, déferrisation, adoucissement ou traitement UV. Nous assurons également la maintenance régulière de ces installations pour garantir une eau toujours conforme.</p>
+          </div>
+        </div>
+
+        <div class="service-card animate-slide-bounce" style="animation-delay: 0.4s;">
+          <div class="service-image">
+            <img src="img/forma.jpg" alt="Formation">
+          </div>
+          <div class="service-content">
+            <h3>Construction des châteaux d'eau et réseaux hydrauliques</h3>
+            <p>Conception et réalisation d'installations hydrauliques</p>
+            <button class="service-btn" onclick="toggleServiceDetails(this)">En savoir plus</button>
+          </div>
+          <div class="service-details" id="details-chateaux">
+            <p>Pour assurer une distribution d'eau régulière et en pression suffisante, nous construisons des châteaux d'eau en béton armé et des réservoirs de stockage adaptés à vos besoins.</p>
+            <p>Nous concevons également les réseaux de distribution hydraulique (canalisations, vannes, raccordements) depuis le forage jusqu'au point de consommation, pour les habitations, les quartiers ou les exploitations agricoles.</p>
+          </div>
+        </div>
+
+        <div class="service-card animate-slide-bounce" style="animation-delay: 0.5s;">
+          <div class="service-image">
+            <img src="img/assainissement.jpeg" alt="Assainissement des eaux usées">
+          </div>
+          <div class="service-content">
+            <h3>Assainissement liquide (traitement des eaux usées)</h3>
+            <p>Services de traitement et de gestion des eaux usées</p>
+            <button class="service-btn" onclick="toggleServiceDetails(this)">En savoir plus</button>
+          </div>
+          <div class="service-details" id="details-assainissement">
+            <p>La préservation de l'environnement et la protection des ressources en eau passent par une gestion rigoureuse des eaux usées.</p>
+            <p>Nous réalisons des études et des travaux d'assainissement autonome ou collectif : fosses septiques, systèmes de lagunage, stations de traitement des eaux usées. Nous intervenons pour les particuliers, les établissements scolaires, les entreprises et les collectivités.</p>
+          </div>
+        </div>
+
+        <div class="service-card animate-slide-bounce" style="animation-delay: 0.5s;">
+          <div class="service-image">
+            <img src="img/h.jpg" alt="Maintenance">
+          </div>
+          <div class="service-content">
+            <h3>Plomberie</h3>
+            <p>Services de plomberie professionnelle</p>
+            <button class="service-btn" onclick="toggleServiceDetails(this)">En savoir plus</button>
+          </div>
+          <div class="service-details" id="plombier">
+            <p>Pour valoriser vos forages et puits, nous proposons la fourniture, l'installation et la maintenance de tous types de pompes adaptées à votre contexte : pompes électriques immergées pour les zones urbanisées, pompes solaires pour les sites isolés ou sans électricité, pompes à motricité humaine (PMH) pour les villages et communautés rurales. Chaque installation est dimensionnée selon le débit du forage et les besoins en eau.</p>
+
+          </div>
+        </div> 
+
+        <div class="service-card animate-slide-bounce" style="animation-delay: 0.5s;">
+          <div class="service-image">
+            <img src="img/h.jpg" alt="Maintenance">
+          </div>
+          <div class="service-content">
+            <h3>Installation des pompes électriques, solaires et à motricité humaine</h3>
+            <p>Équipement et maintenance des systèmes de pompage</p>
+            <button class="service-btn" onclick="toggleServiceDetails(this)">En savoir plus</button>
+          </div>
+          <div class="service-details" id="details-pompes">
+            <p>Pour valoriser vos forages et puits, nous proposons la fourniture, l'installation et la maintenance de tous types de pompes adaptées à votre contexte : pompes électriques immergées pour les zones urbanisées, pompes solaires pour les sites isolés ou sans électricité, pompes à motricité humaine (PMH) pour les villages et communautés rurales. Chaque installation est dimensionnée selon le débit du forage et les besoins en eau.</p>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VISION & MISSION -->
+  <section class="vision-mission">
+    <div class="container">
+      <div class="section-header">
+        <h2>Notre Mission & Vision</h2>
+        <p>Nos valeurs et nos engagements</p>
+      </div>
+      <div class="vision-mission-grid">
+        <div class="vision-card animate-slide-bounce" style="animation-delay: 0.2s;">
+          <div class="vision-icon">🎯</div>
+          <h3>Notre Mission</h3>
+          <p>Garantir à chaque client un accès durable à une eau potable, saine et en quantité suffisante, grâce à des solutions techniques adaptées et respectueuses de l'environnement.</p>
+        </div>
+        <div class="vision-card animate-slide-bounce">
+          <div class="vision-icon">👁️</div>
+          <h3>Notre Vision</h3>
+          <p>Devenir le partenaire de référence en matière d'eau et d'assainissement au Cameroun, reconnu pour la qualité, la fiabilité et l'impact social de nos réalisations.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATISTICS -->
+  <section class="statistics">
+    <div class="container">
+      <div class="section-header">
+        <h2>HYDREAUSOL SARL en Chiffres</h2>
+        <p>Notre expertise et notre impact</p>
+      </div>
+      <div class="stats-grid">
+        <div class="stat-card animate-cascade">
+          <div class="stat-number">10+</div>
+          <div class="stat-label">Années d'Expérience</div>
+          <div class="stat-description">Depuis notre création en 2015</div>
+        </div>
+
+        <div class="stat-card animate-cascade" style="animation-delay: 0.1s;">
+          <div class="stat-number">200+</div>
+          <div class="stat-label">Forages Réalisés</div>
+          <div class="stat-description">Dans les 10 régions du Cameroun</div>
+        </div>
+
+        <div class="stat-card animate-cascade" style="animation-delay: 0.2s;">
+          <div class="stat-number">10</div>
+          <div class="stat-label">Régions Couvertes</div>
+          <div class="stat-description">Partout au Cameroun</div>
+        </div>
+
+        <div class="stat-card animate-cascade" style="animation-delay: 0.3s;">
+          <div class="stat-number">8</div>
+          <div class="stat-label">Domaines d'Expertise</div>
+          <div class="stat-description">Études, Forages, Analyses, Traitement, Châteaux d'eau, Assainissement, Plomberie, Pompes</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PORTFOLIO -->
+  <section class="portfolio" id="portfolio">
+    <div class="container">
+      <div class="section-header">
+        <h2>Nos Réalisations</h2>
+        <p>Projets réussis à travers le Cameroun</p>
+      </div>
+      <div class="portfolio-grid">
+        <div class="portfolio-item animate">
+          <img src="img/e.jpg" alt="Forages">
+          <div class="portfolio-overlay">
+            <h3>Réalisation des Forages</h3>
+            <p>Projets réussis en multi-régions</p>
+          </div>
+        </div>
+
+        <div class="portfolio-item animate" style="animation-delay: 0.1s;">
+          <img src="img/4.jpg" alt="Études">
+          <div class="portfolio-overlay">
+            <h3>Études Géophysiques</h3>
+            <p>Ressources hydriques identifiées</p>
+          </div>
+        </div>
+
+        <div class="portfolio-item animate" style="animation-delay: 0.2s;">
+          <img src="img/3.jpg" alt="Analyses">
+          <div class="portfolio-overlay">
+            <h3>Prélèvement et Analyses</h3>
+            <p>Qualité de l'eau validée</p>
+          </div>
+        </div>
+
+        <div class="portfolio-item animate" style="animation-delay: 0.3s;">
+          <img src="img/15.jpg" alt="Pompes">
+          <div class="portfolio-overlay">
+            <h3>Pompes Humaines</h3>
+            <p>Installation complète</p>
+          </div>
+        </div>
+
+        <div class="portfolio-item animate" style="animation-delay: 0.4s;">
+          <img src="img/h.jpg" alt="Châteaux">
+          <div class="portfolio-overlay">
+            <h3>Châteaux d'Eaux</h3>
+            <p>Construction et installation</p>
+          </div>
+        </div>
+
+        <div class="portfolio-item animate" style="animation-delay: 0.5s;">
+          <img src="img/16.jpg" alt="Plomberie">
+          <div class="portfolio-overlay">
+            <h3>Installations</h3>
+            <p>Plomberie professionnelle</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials" id="testimonials">
+    <div class="container">
+      <div class="section-header">
+        <h2>Témoignages de nos Clients</h2>
+        <p>Satisfaction et confiance de nos partenaires</p>
+      </div>
+      <div class="testimonials-grid">
+        <div class="testimonial-card animate-bounce">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"Nous avons fait appel à Hydreausol pour l’installation d’un système d’approvisionnement en eau pour notre exploitation agricole. Travail de qualité et respect des délais."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">👤</div>
+            <div class="author-info">
+              <h4>Touala</h4>
+              <p>Yaoundé</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card animate-bounce" style="animation-delay: 0.1s;">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"Hydreausol a réalisé notre  forage avec beaucoup de professionnalisme. L’équipe est sérieuse, ponctuelle et très expérimentée. Aujourd’hui nous avons de l’eau potable en permanence. Je recommande fortement cette entreprise."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">👤</div>
+            <div class="author-info">
+              <h4>Jean M.</h4>
+              <p>Douala</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card animate-bounce" style="animation-delay: 0.2s;">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"Excellent service ! L’équipe Hydreausol est très compétente et donne de bons conseils pour l’entretien du forages et des cubitenaires. Nous sommes très satisfaits."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">👤</div>
+            <div class="author-info">
+              <h4>Marie</h4>
+              <p>Douala, bonaberie</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card animate-bounce" style="animation-delay: 0.3s;">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"Hydreausol nous a aidés à sécuriser l’accès à l’eau potable pour nos élèves. Leur intervention a été rapide et très professionnelle."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">👤</div>
+            <div class="author-info">
+              <h4>École Privée Les Étoiles</h4>
+              <p>Région Littoral</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card animate-bounce" style="animation-delay: 0.4s;">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"Hydreausol est une entreprise très sérieuse. Ils ont rapidement trouvé une solution pour notre problème d’eau. Depuis leur intervention, notre forage fonctionne parfaitement."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">👤</div>
+            <div class="author-info">
+              <h4>Clarisse B.</h4>
+              <p>Kribi</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card animate-bounce" style="animation-delay: 0.5s;">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"Très bonne expérience avec Hydreausol. Le travail est propre, rapide et efficace. Je recommande cette entreprise à toute personne qui cherche un forage de qualité."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">👤</div>
+            <div class="author-info">
+              <h4>Pauline D.</h4>
+              <p>Yaoundé</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PARTNERS -->
+  <section class="partners" id="partners">
+    <div class="container">
+      <div class="section-header">
+        <h2>Nos Partenaires</h2>
+        <p>Collaboration avec les meilleures organisations</p>
+      </div>
+      <div class="partners-grid">
+        <div class="partner-item animate">
+          <img src="img/partenaire1.jpeg" alt="HYDRAU">
+          <p>Archidiocèse de Bafoussam</p>
+        </div>
+        <div class="partner-item animate" style="animation-delay: 0.1s;">
+          <img src="img/partenaire2.jpeg" alt="MINEE">
+          <p>Archidiocèse de Douala</p>
+        </div>
+        <div class="partner-item animate" style="animation-delay: 0.1s;">
+          <img src="img/partenaire3.jpeg" alt="MINEE">
+          <p>Association kapacitas</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TEAM -->
+  <section class="team" id="team">
+    <div class="container">
+      <div class="section-header">
+        <h2>Notre Équipe</h2>
+        <p>Professionnels qualifiés et expérimentés</p>
+      </div>
+      <div class="team-grid">
+        <div class="team-member animate">
+          <div class="team-member-image">
+            <img src="img/j.jpg" alt="Équipe">
+          </div>
+          <div class="team-member-content">
+            <h3>Équipe Technique</h3>
+            <p>Ingénieurs géophysique et forages</p>
+          </div>
+        </div>
+
+        <div class="team-member animate" style="animation-delay: 0.1s;">
+          <div class="team-member-image">
+            <img src="img/17.jpg" alt="Terrain">
+          </div>
+          <div class="team-member-content">
+            <h3>Équipe Terrain</h3>
+            <p>Techniciens installation et maintenance</p>
+          </div>
+        </div>
+
+        <div class="team-member animate" style="animation-delay: 0.2s;">
+          <div class="team-member-image">
+            <img src="img/e.jpg" alt="Labo">
+          </div>
+          <div class="team-member-content">
+            <h3>Équipe Laboratoire</h3>
+            <p>Microbiologistes analyste qualité</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="section-header">
+        <h2>Contactez-Nous</h2>
+        <p>Obtenez votre devis gratuit instantanément par appel, whatsapp ou en remplissant le formulaire</p>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-info">
+          <div class="contact-item animate">
+            <div class="contact-icon">📍</div>
+            <div class="contact-item-content">
+              <h3>Localisation</h3>
+              <p>Cameroun, Yaoundé - Douala</p>
+            </div>
+          </div>
+
+          <div class="contact-item animate" style="animation-delay: 0.1s;">
+            <div class="contact-icon">📞</div>
+            <div class="contact-item-content">
+              <h3>Téléphone</h3>
+              <p><a href="tel:+237673249694">+237 673 249 694</a></p>
+            </div>
+          </div>
+
+          <div class="contact-item animate" style="animation-delay: 0.2s;">
+            <div class="contact-icon">✉️</div>
+            <div class="contact-item-content">
+              <h3>Email</h3>
+              <p><a href="mailto:hydrauenvironnement@gmail.com">hydrauenvironnement@gmail.com</a></p>
+            </div>
+          </div>
+
+          <div class="contact-item animate" style="animation-delay: 0.3s;">
+            <div class="contact-icon">👍</div>
+            <div class="contact-item-content">
+              <h3>Réseaux Sociaux</h3>
+              <p><a href="https://web.facebook.com/profile.php?id=100063889519936" target="_blank">Facebook</a></p>
+            </div>
+          </div>
+        </div>
+
+        <form class="contact-form animate">
+          <div class="form-group">
+            <label for="name">Nom Complet *</label>
+            <input type="text" id="name" name="name" required placeholder="Votre nom">
+          </div>
+          <div class="form-group">
+            <label for="email">Email *</label>
+            <input type="email" id="email" name="email" required placeholder="votre@email.com">
+          </div>
+          <div class="form-group">
+            <label for="phone">Téléphone *</label>
+            <input type="tel" id="phone" name="phone" required placeholder="+237 6XX XXX XXX">
+          </div>
+          <div class="form-group">
+            <label for="subject">Sujet *</label>
+            <input type="text" id="subject" name="subject" required placeholder="Sujet">
+          </div>
+          <div class="form-group">
+            <label for="message">Message *</label>
+            <textarea id="message" name="message" required placeholder="Votre message..." rows="5"></textarea>
+          </div>
+          <button type="submit">Envoyer</button>
+          <p id="form-message" style="margin-top: 1rem; text-align: center; display: none;"></p>
+        </form>
+      </div>
+
+      <div class="contact-map animate" style="margin-top: 3rem;">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8103648.681833592!2d12.294004100000002!3d7.369617500000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xa7e8e13d35f56ae3%3A0x5301640050b6177a!2sHydrau-environnement%20services!5e0!3m2!1sfr!2scm!4v1755374827531" allowfullscreen="" loading="lazy"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>À Propos</h3>
+          <p>
+            Parce que l'eau c'est la vie, mais souillée elle peut détruire des vies, l'entreprise HYDREAUSOL SARL est soucieuse de l'amélioration des conditions de vie des populations sur l'ensemble du triangle national camerounais, notamment en ce qui concerne l'accès à l'eau potable.
+          </p>
+          <div class="social-links" style="margin-top: 1rem;">
+            <a href="https://web.facebook.com/profile.php?id=100063889519936" target="_blank" rel="noopener noreferrer"><i class="fa fa-facebook"></i></a>
+            <a href="https://api.whatsapp.com/send?phone=237673249694" target="_blank" rel="noopener noreferrer"><i class="fa fa-whatsapp"></i></a>
+            <a href="mailto:hydrauenvironnement@gmail.com" target="_blank" rel="noopener noreferrer"><i class="fa fa-envelope"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-section">
+          <h3>Navigation</h3>
+          <ul>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#portfolio">Réalisations</a></li>
+            <li><a href="#testimonials">Témoignages</a></li>
+            <li><a href="#partners">Partenaires</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h3>Services</h3>
+          <ul>
+            <li><a href="#services">Études Géophysiques</a></li>
+            <li><a href="#services">Forages et Puits</a></li>
+            <li><a href="#services">Analyses de l'Eau</a></li>
+            <li><a href="#services">Installations</a></li>
+            <li><a href="#services">Maintenance</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h3>Contact</h3>
+          <p>📍 Cameroun, Yaoundé - Douala</p>
+          <p>📞 <a href="tel:+237673249694">+237 673 249 694</a></p>
+          <p>✉️ <a href="mailto:hydrauenvironnement@gmail.com">hydrauenvironnement@gmail.com</a></p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 HYDRAU-ENVIRONNEMENT SERVICES. Tous droits réservés.</p>
+        <p>Designed by Steph_Solutions | Powered by Modern Web</p>
       </div>
     </div>
   </footer>
 
-  <a href="#" class="back-to-top"><i class="fa fa-angle-up"></i></a>
+  <!-- BUTTONS -->
+  <button class="back-to-top" id="backToTop">↑</button>
+  <a title="Contacter sur WhatsApp" aria-label="Contacter sur WhatsApp" href="https://api.whatsapp.com/send?phone=237673249694&text=Salut%0A" target="_blank" rel="noopener noreferrer" class="whatsapp-btn"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
 
-  <!-- JavaScript Libraries -->
-  <script src="lib/jquery/jquery.min.js"></script>
-  <script src="lib/jquery/jquery-migrate.min.js"></script>
-  <script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="lib/easing/easing.min.js"></script>
-  <script src="lib/superfish/hoverIntent.js"></script>
-  <script src="lib/superfish/superfish.min.js"></script>
-  <script src="lib/wow/wow.min.js"></script>
-  <script src="lib/venobox/venobox.min.js"></script>
-  <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    // Service details toggle - GLOBAL SCOPE
+    function toggleServiceDetails(button) {
+      const card = button.closest('.service-card');
+      const details = card.querySelector('.service-details');
 
-  <!-- Contact Form JavaScript File -->
-  <script src="contactform/contactform.js"></script>
-
-  <!-- Template Main Javascript File -->
-  <script src="js/main.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/emailjs-com@2.4.1/dist/email.min.js"></script>
-<script>
-  (function(){
-    emailjs.init("N469QWuQ0w5xk269j"); // ⚠️ à remplacer par ton Public Key EmailJS
-  })();
-</script>
-<script>
-  document.getElementById("contact-form").addEventListener("submit", function(event) {
-    event.preventDefault();
-
-    emailjs.sendForm("service_mkhqtjj", "template_u4vg5gd", this)
-      .then(function() {
-        document.getElementById("form-message").innerText = "✅ Mail envoyé avec succès !";
-        $(".send-form").prop("disabled", true);
-      }, function(error) {
-        document.getElementById("form-message").innerText = "❌ Erreur lors de l'envoi : " + JSON.stringify(error);
+      // Close all other open details
+      document.querySelectorAll('.service-details.expanded').forEach(openDetails => {
+        if (openDetails !== details) {
+          openDetails.classList.remove('expanded');
+          // Reset all buttons to "En savoir plus"
+          const otherButton = openDetails.closest('.service-card').querySelector('.service-btn');
+          if (otherButton) {
+            otherButton.textContent = 'En savoir plus';
+          }
+        }
       });
-  });
-</script>
-  
-</body>
 
+      // Toggle current details
+      if (details.classList.contains('expanded')) {
+        details.classList.remove('expanded');
+        button.textContent = 'En savoir plus';
+      } else {
+        details.classList.add('expanded');
+        button.textContent = 'Réduire';
+        // Scroll to show details
+        setTimeout(() => {
+          details.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }, 300);
+      }
+    }
+
+    function closeServiceDetails(button) {
+      const details = button.closest('.service-details');
+      const card = details.closest('.service-card');
+      const serviceBtn = card.querySelector('.service-btn');
+
+      details.classList.remove('expanded');
+      if (serviceBtn) {
+        serviceBtn.textContent = 'En savoir plus';
+      }
+    }
+
+    $(document).ready(function() {
+      // Header scroll
+      $(window).scroll(function() {
+        if ($(this).scrollTop() > 50) {
+          $('#header').addClass('scrolled');
+        } else {
+          $('#header').removeClass('scrolled');
+        }
+      });
+
+      // Mobile menu
+      const menuToggle = $('#menuToggle');
+      const mobileNav = $('#mobileNav');
+
+      menuToggle.click(function() {
+        menuToggle.toggleClass('active');
+        mobileNav.toggleClass('active');
+      });
+
+      $('a[href^="#"]').click(function() {
+        if (mobileNav.hasClass('active')) {
+          menuToggle.removeClass('active');
+          mobileNav.removeClass('active');
+        }
+      });
+
+      // Scroll animations progressives et fluides
+      let animationQueue = [];
+      let isAnimating = false;
+
+      function handleScroll() {
+        const elements = document.querySelectorAll('.animate, .animate-left, .animate-right, .animate-bounce, .animate-slide-bounce');
+        const isMobile = window.innerWidth <= 768;
+        const isTablet = window.innerWidth <= 1024 && window.innerWidth > 768;
+
+        elements.forEach((el, index) => {
+          const elementPosition = el.getBoundingClientRect().top;
+          const screenPosition = window.innerHeight * 0.8; // Plus haut pour déclenchement anticipé
+
+          if (elementPosition < screenPosition && !el.classList.contains('animated') && !el.classList.contains('queued')) {
+            el.classList.add('queued');
+
+            // Configuration des délais selon le device et la position
+            let baseDelay = 0;
+            let staggerDelay = 0;
+
+            if (isMobile) {
+              // Mobile : vague lente et progressive
+              baseDelay = Math.floor(index / 6) * 300; // Groupes de 6 éléments
+              staggerDelay = (index % 6) * 150; // 150ms entre éléments du même groupe
+            } else if (isTablet) {
+              // Tablet : vague moyenne
+              baseDelay = Math.floor(index / 4) * 200; // Groupes de 4 éléments
+              staggerDelay = (index % 4) * 100; // 100ms entre éléments du même groupe
+            } else {
+              // Desktop : vague rapide et dynamique
+              baseDelay = Math.floor(index / 5) * 150; // Groupes de 5 éléments
+              staggerDelay = (index % 5) * 80; // 80ms entre éléments du même groupe
+            }
+
+            const totalDelay = baseDelay + staggerDelay;
+
+            // Ajouter à la file d'attente avec délai progressif
+            animationQueue.push({
+              element: el,
+              delay: totalDelay,
+              timestamp: Date.now() + totalDelay
+            });
+          }
+        });
+
+        // Trier la file par timestamp pour un déclenchement ordonné
+        animationQueue.sort((a, b) => a.timestamp - b.timestamp);
+
+        // Traiter la file d'attente
+        processAnimationQueue();
+      }
+
+      function processAnimationQueue() {
+        if (isAnimating || animationQueue.length === 0) return;
+
+        isAnimating = true;
+
+        const now = Date.now();
+        const readyAnimations = animationQueue.filter(item => item.timestamp <= now);
+
+        if (readyAnimations.length > 0) {
+          // Traiter les animations prêtes
+          readyAnimations.forEach(item => {
+            setTimeout(() => {
+              item.element.classList.remove('queued');
+              item.element.classList.add('animated');
+            }, Math.random() * 50); // Petit délai aléatoire pour plus de naturel
+          });
+
+          // Retirer les animations traitées
+          animationQueue = animationQueue.filter(item => item.timestamp > now);
+        }
+
+        isAnimating = false;
+
+        // Continuer si il reste des animations
+        if (animationQueue.length > 0) {
+          requestAnimationFrame(processAnimationQueue);
+        }
+      }
+
+      // Gestion du scroll avec optimisation des performances
+      let scrollTimeout;
+      let ticking = false;
+
+      function onScroll() {
+        if (!ticking) {
+          requestAnimationFrame(() => {
+            handleScroll();
+            ticking = false;
+          });
+          ticking = true;
+        }
+
+        // Reset du timeout pour les animations continues
+        clearTimeout(scrollTimeout);
+        scrollTimeout = setTimeout(() => {
+          // Vérifier s'il y a des éléments manqués après l'arrêt du scroll
+          handleScroll();
+        }, 150);
+      }
+
+      window.addEventListener('scroll', onScroll, { passive: true });
+      handleScroll(); // Animation initiale
+
+      // Recalculer les animations au redimensionnement avec debounce
+      let resizeTimeout;
+      let lastWidth = window.innerWidth;
+
+      window.addEventListener('resize', function() {
+        clearTimeout(resizeTimeout);
+        const currentWidth = window.innerWidth;
+
+        // Seulement recalculer si le changement de taille est significatif
+        if (Math.abs(currentWidth - lastWidth) > 50) {
+          resizeTimeout = setTimeout(function() {
+            // Reset des animations pour les recalculer
+            const animatedElements = document.querySelectorAll('.animate.animated, .animate-left.animated, .animate-right.animated, .animate-bounce.animated, .animate-slide-bounce.animated, .animate.queued, .animate-left.queued, .animate-right.queued, .animate-bounce.queued, .animate-slide-bounce.queued');
+            animatedElements.forEach(el => {
+              el.classList.remove('animated', 'queued');
+            });
+
+            // Vider la file d'attente
+            animationQueue = [];
+
+            // Recalculer après un court délai
+            setTimeout(() => {
+              handleScroll();
+              lastWidth = window.innerWidth;
+            }, 200);
+          }, 300);
+        }
+      });
+
+      // Back to top
+      const backToTop = $('#backToTop');
+      $(window).scroll(function() {
+        if ($(this).scrollTop() > 200) {
+          backToTop.addClass('show');
+        } else {
+          backToTop.removeClass('show');
+        }
+      });
+
+      backToTop.click(function() {
+        $('html, body').animate({ scrollTop: 0 }, 800);
+      });
+
+      // Smooth scroll
+      $('a[href^="#"]').click(function(e) {
+        const target = $(this.getAttribute('href'));
+        if (target.length) {
+          $('html, body').animate({
+            scrollTop: target.offset().top - 70
+          }, 800);
+        }
+      });
+
+      // Auto-scroll horizontal portfolio gallery
+      const $portfolio = $('.portfolio-grid');
+      if ($portfolio.length) {
+        const step = 260; // roughly card width + gap
+        setInterval(() => {
+          const el = $portfolio[0];
+          const max = el.scrollWidth - el.clientWidth;
+          const atEnd = Math.ceil(el.scrollLeft) >= Math.floor(max) - 1;
+          if (atEnd) {
+            $portfolio.animate({ scrollLeft: 0 }, 500);
+            el.scrollLeft = step;
+          } else {
+            let next = el.scrollLeft + step;
+            if (next > max) next = max;
+            $portfolio.animate({ scrollLeft: next }, 500);
+          }
+        }, 4000);
+      }
+
+      // Form submission
+      $('form').submit(function(e) {
+        e.preventDefault();
+        const name = $('#name').val();
+        const email = $('#email').val();
+        const phone = $('#phone').val();
+        const subject = $('#subject').val();
+        const message = $('#message').val();
+        const formMessage = $('#form-message');
+
+        if (name && email && phone && subject && message) {
+          formMessage.text('✅ Message envoyé! Nous vous recontacterons bientôt.').show().css('color', '#4CAF50');
+          $('form')[0].reset();
+          setTimeout(() => {
+            formMessage.fadeOut();
+          }, 5000);
+        } else {
+          formMessage.text('❌ Veuillez remplir tous les champs').show().css('color', '#F94C4C');
+        }
+      });
+    });
+  </script>
+
+</body>
 </html>
