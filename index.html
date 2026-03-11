@@ -5,8 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hydrau-Environnement Services</title>
   <meta name="keywords" content="forage d'eau Yaoundé, forage Douala, entreprise de forage au Cameroun, plomberie, traitement des eaux, assainissement, études géophysiques">
-  <meta name="description" content="Hydrau-Environnement SARL : forages, analyses, traitement et assainissement au Cameroun. Solutions durables en eau potable.">
+  <meta name="description" content="Hydrau-Environnement SARL : forages, analyses, traitement et assainissement au Cameroun. Solutions durables en eau potable.">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+   <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
   <!-- Font Awesome for icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-pVnzyP6fX2WmVH16KqkDZS08P3O79h+tZlKkwIO/B4Lf5kyzE+1MRhVulbkIW0wu1yaTtkvq1W7Fk8SBgjF3MQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <style>
@@ -70,138 +71,58 @@
     }
 
     @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(30px) scale(0.95);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-      }
+      from { opacity: 0; transform: translateY(30px) scale(0.95); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
     }
 
     @keyframes slideInLeft {
-      from {
-        opacity: 0;
-        transform: translateX(-50px) rotate(-2deg);
-      }
-      to {
-        opacity: 1;
-        transform: translateX(0) rotate(0deg);
-      }
+      from { opacity: 0; transform: translateX(-50px) rotate(-2deg); }
+      to { opacity: 1; transform: translateX(0) rotate(0deg); }
     }
 
     @keyframes slideInRight {
-      from {
-        opacity: 0;
-        transform: translateX(50px) rotate(2deg);
-      }
-      to {
-        opacity: 1;
-        transform: translateX(0) rotate(0deg);
-      }
+      from { opacity: 0; transform: translateX(50px) rotate(2deg); }
+      to { opacity: 1; transform: translateX(0) rotate(0deg); }
     }
 
     @keyframes bounceIn {
-      0% {
-        opacity: 0;
-        transform: scale(0.3) rotate(-5deg);
-      }
-      50% {
-        opacity: 1;
-        transform: scale(1.05) rotate(2deg);
-      }
-      70% {
-        transform: scale(0.95) rotate(-1deg);
-      }
-      100% {
-        opacity: 1;
-        transform: scale(1) rotate(0deg);
-      }
+      0% { opacity: 0; transform: scale(0.3) rotate(-5deg); }
+      50% { opacity: 1; transform: scale(1.05) rotate(2deg); }
+      70% { transform: scale(0.95) rotate(-1deg); }
+      100% { opacity: 1; transform: scale(1) rotate(0deg); }
     }
 
     @keyframes slideUpBounce {
-      0% {
-        opacity: 0;
-        transform: translateY(50px) scale(0.9);
-      }
-      60% {
-        opacity: 1;
-        transform: translateY(-10px) scale(1.02);
-      }
-      100% {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-      }
+      0% { opacity: 0; transform: translateY(50px) scale(0.9); }
+      60% { opacity: 1; transform: translateY(-10px) scale(1.02); }
+      100% { opacity: 1; transform: translateY(0) scale(1); }
     }
 
-    .animate {
-      animation: fadeInUp 0.8s ease forwards;
-      opacity: 0;
-      animation-fill-mode: both;
-    }
+    .animate { animation: fadeInUp 0.8s ease forwards; opacity: 0; animation-fill-mode: both; }
+    .animate.animated { opacity: 1; }
+    .animate-left { animation: slideInLeft 0.8s ease forwards; opacity: 0; animation-fill-mode: both; }
+    .animate-left.animated { opacity: 1; }
+    .animate-right { animation: slideInRight 0.8s ease forwards; opacity: 0; animation-fill-mode: both; }
+    .animate-bounce { animation: bounceIn 0.8s ease forwards; opacity: 0; animation-fill-mode: both; }
+    .animate-bounce.animated { opacity: 1; }
+    .animate-slide-bounce { animation: slideUpBounce 0.8s ease forwards; opacity: 0; animation-fill-mode: both; }
+    .animate-slide-bounce.animated { opacity: 1; }
 
-    .animate.animated {
-      opacity: 1;
-    }
-
-    .animate-left {
-      animation: slideInLeft 0.8s ease forwards;
-      opacity: 0;
-      animation-fill-mode: both;
-    }
-
-    .animate-left.animated {
-      opacity: 1;
-    }
-
-    .animate-right {
-      animation: slideInRight 0.8s ease forwards;
-      opacity: 0;
-      animation-fill-mode: both;
-    }
-
-    .animate-bounce {
-      animation: bounceIn 0.8s ease forwards;
-      opacity: 0;
-      animation-fill-mode: both;
-    }
-
-    .animate-bounce.animated {
-      opacity: 1;
-    }
-
-    .animate-slide-bounce {
-      animation: slideUpBounce 0.8s ease forwards;
-      opacity: 0;
-      animation-fill-mode: both;
-    }
-
-    .animate-slide-bounce.animated {
-      opacity: 1;
-    }
-
-    /* État d'attente pour les animations */
     .animate.queued,
     .animate-left.queued,
     .animate-right.queued,
     .animate-bounce.queued,
-    .animate-slide-bounce.queued {
-      opacity: 0;
-    }
+    .animate-slide-bounce.queued { opacity: 0; }
 
-    /* Animations échelonnées pour desktop */
     @media (min-width: 1025px) {
       .animate:nth-child(3n+1) { animation-delay: 0s; }
       .animate:nth-child(3n+2) { animation-delay: 0.1s; }
       .animate:nth-child(3n+3) { animation-delay: 0.2s; }
-
       .animate:nth-child(3n+4) { animation-delay: 0.3s; }
       .animate:nth-child(3n+5) { animation-delay: 0.4s; }
       .animate:nth-child(3n+6) { animation-delay: 0.5s; }
     }
 
-    /* Animations individuelles pour mobile */
     @media (max-width: 768px) {
       .animate { animation-delay: 0s; }
       .animate:nth-child(1) { animation-delay: 0s; }
@@ -274,13 +195,8 @@
       transition: width 0.3s ease;
     }
 
-    nav.desktop-nav a:hover {
-      color: var(--white);
-    }
-
-    nav.desktop-nav a:hover::after {
-      width: 100%;
-    }
+    nav.desktop-nav a:hover { color: var(--white); }
+    nav.desktop-nav a:hover::after { width: 100%; }
 
     .menu-toggle {
       display: none;
@@ -299,18 +215,9 @@
       transform-origin: center;
     }
 
-    .menu-toggle.active span:nth-child(1) {
-      transform: rotate(45deg) translateY(10px) scaleX(0.8);
-    }
-
-    .menu-toggle.active span:nth-child(2) {
-      opacity: 0;
-      transform: scaleX(0);
-    }
-
-    .menu-toggle.active span:nth-child(3) {
-      transform: rotate(-45deg) translateY(-10px) scaleX(0.8);
-    }
+    .menu-toggle.active span:nth-child(1) { transform: rotate(45deg) translateY(10px) scaleX(0.8); }
+    .menu-toggle.active span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+    .menu-toggle.active span:nth-child(3) { transform: rotate(-45deg) translateY(-10px) scaleX(0.8); }
 
     .mobile-nav {
       position: fixed;
@@ -379,9 +286,7 @@
       line-height: 1.2;
     }
 
-    .hero-text .highlight {
-      color: var(--accent-color);
-    }
+    .hero-text .highlight { color: var(--accent-color); }
 
     .hero-text p {
       font-size: 1.1rem;
@@ -427,9 +332,7 @@
     }
 
     /* ABOUT */
-    .about {
-      background-color: var(--light-bg);
-    }
+    .about { background-color: var(--light-bg); }
 
     .about-content {
       display: grid;
@@ -456,14 +359,10 @@
       margin-bottom: 1rem;
     }
 
-    .about-text strong {
-      color: var(--secondary-color);
-    }
+    .about-text strong { color: var(--secondary-color); }
 
     /* SERVICES */
-    .services {
-      background: linear-gradient(135deg, #f8f9fa 0%, #e8f5f7 100%);
-    }
+    .services { background: linear-gradient(135deg, #f8f9fa 0%, #e8f5f7 100%); }
 
     .services-grid {
       display: grid;
@@ -498,16 +397,11 @@
       transition: transform 0.3s ease;
     }
 
-    .service-card:hover .service-image img {
-      transform: scale(1.1);
-    }
+    .service-card:hover .service-image img { transform: scale(1.1); }
 
     .service-overlay {
       position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
+      top: 0; left: 0; right: 0; bottom: 0;
       background: rgba(0, 126, 148, 0.9);
       display: flex;
       align-items: center;
@@ -517,9 +411,7 @@
       padding: 1rem;
     }
 
-    .service-card:hover .service-overlay {
-      opacity: 1;
-    }
+    .service-card:hover .service-overlay { opacity: 1; }
 
     .service-overlay-text {
       color: var(--white);
@@ -606,33 +498,26 @@
       transition: all 0.3s ease;
     }
 
-    .service-details .close-btn:hover {
-      background: var(--secondary-color);
-    }
+    .service-details .close-btn:hover { background: var(--secondary-color); }
 
     /* PORTFOLIO */
-    .portfolio {
-      background-color: var(--light-bg);
-    }
+    .portfolio { background-color: var(--light-bg); }
 
     .portfolio-grid {
-      display: flex;              /* switch to flex for horizontal scroll */
+      display: flex;
       overflow-x: auto;
       scroll-behavior: smooth;
       gap: 2rem;
       padding-bottom: 1rem;
-      /* hide native scrollbar */
-      -ms-overflow-style: none;  /* IE and Edge */
-      scrollbar-width: none;     /* Firefox */
+      -ms-overflow-style: none;
+      scrollbar-width: none;
     }
+
     .portfolio-grid::-webkit-scrollbar { display: none; }
 
     .portfolio-item {
       flex: 0 0 250px;
       min-width: 250px;
-    }
-
-    .portfolio-item {
       position: relative;
       border-radius: 15px;
       overflow: hidden;
@@ -654,16 +539,11 @@
       transition: transform 0.3s ease;
     }
 
-    .portfolio-item:hover img {
-      transform: scale(1.1);
-    }
+    .portfolio-item:hover img { transform: scale(1.1); }
 
     .portfolio-overlay {
       position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
+      top: 0; left: 0; right: 0; bottom: 0;
       background: rgba(0, 126, 148, 0.9);
       display: flex;
       align-items: center;
@@ -674,19 +554,10 @@
       color: var(--white);
     }
 
-    .portfolio-item:hover .portfolio-overlay {
-      opacity: 1;
-    }
+    .portfolio-item:hover .portfolio-overlay { opacity: 1; }
 
-    .portfolio-overlay h3 {
-      font-size: 1.2rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .portfolio-overlay p {
-      font-size: 0.85rem;
-      opacity: 0.9;
-    }
+    .portfolio-overlay h3 { font-size: 1.2rem; margin-bottom: 0.5rem; }
+    .portfolio-overlay p { font-size: 0.85rem; opacity: 0.9; }
 
     /* TESTIMONIALS */
     .testimonials {
@@ -695,9 +566,7 @@
     }
 
     .testimonials .section-header h2,
-    .testimonials .section-header p {
-      color: var(--white);
-    }
+    .testimonials .section-header p { color: var(--white); }
 
     .testimonials .section-header h2::after {
       background: linear-gradient(90deg, var(--accent-color), rgba(255, 255, 255, 0.5));
@@ -723,50 +592,29 @@
       transform: translateY(-10px);
     }
 
-    .testimonial-stars {
-      color: #FFD700;
-      font-size: 1.2rem;
-      margin-bottom: 1rem;
-    }
+    .testimonial-stars { color: #FFD700; font-size: 1rem; margin-bottom: 1rem; letter-spacing: 2px; }
+    .testimonial-text { font-style: italic; margin-bottom: 1.5rem; line-height: 1.8; }
 
-    .testimonial-text {
-      font-style: italic;
-      margin-bottom: 1.5rem;
-      line-height: 1.8;
-    }
-
-    .testimonial-author {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-    }
+    .testimonial-author { display: flex; align-items: center; gap: 1rem; }
 
     .author-avatar {
-      width: 50px;
-      height: 50px;
+      width: 48px;
+      height: 48px;
+      min-width: 48px;
       border-radius: 50%;
-      background: rgba(255, 255, 255, 0.2);
+      background: linear-gradient(135deg, var(--accent-color), var(--secondary-color));
       display: flex;
       align-items: center;
       justify-content: center;
-      font-weight: 700;
-    }
-
-    .author-info h4 {
+      font-size: 1.2rem;
       color: var(--white);
-      font-size: 0.95rem;
-      margin-bottom: 0.2rem;
     }
 
-    .author-info p {
-      color: rgba(255, 255, 255, 0.7);
-      font-size: 0.85rem;
-    }
+    .author-info h4 { color: var(--white); font-size: 0.95rem; margin-bottom: 0.2rem; }
+    .author-info p { color: rgba(255, 255, 255, 0.7); font-size: 0.85rem; }
 
     /* PARTNERS */
-    .partners {
-      background-color: var(--light-bg);
-    }
+    .partners { background-color: var(--light-bg); }
 
     .partners-grid {
       display: grid;
@@ -794,21 +642,11 @@
       box-shadow: var(--shadow-lg);
     }
 
-    .partner-item img {
-      max-height: 180px;
-      max-width: 90%;
-    }
-
-    .partner-item p {
-      color: var(--primary-color);
-      font-weight: 700;
-      font-size: 1.2rem;
-    }
+    .partner-item img { max-height: 180px; max-width: 90%; }
+    .partner-item p { color: var(--primary-color); font-weight: 700; font-size: 1.2rem; }
 
     /* TEAM */
-    .team {
-      background-color: var(--light-bg);
-    }
+    .team { background-color: var(--light-bg); }
 
     .team-grid {
       display: grid;
@@ -829,11 +667,7 @@
       box-shadow: var(--shadow-lg);
     }
 
-    .team-member-image {
-      width: 100%;
-      height: 300px;
-      overflow: hidden;
-    }
+    .team-member-image { width: 100%; height: 300px; overflow: hidden; }
 
     .team-member-image img {
       width: 100%;
@@ -842,14 +676,9 @@
       transition: transform 0.3s ease;
     }
 
-    .team-member:hover .team-member-image img {
-      transform: scale(1.1);
-    }
+    .team-member:hover .team-member-image img { transform: scale(1.1); }
 
-    .team-member-content {
-      padding: 2rem;
-      text-align: center;
-    }
+    .team-member-content { padding: 2rem; text-align: center; }
 
     .team-member-content h3 {
       font-size: 1.2rem;
@@ -857,20 +686,18 @@
       margin-bottom: 0.5rem;
     }
 
-    .team-member-content p {
-      color: var(--text-light);
-    }
+    .team-member-content p { color: var(--text-light); }
 
-    /* CONTACT */
+    /* ============================================================
+       CONTACT — version responsive améliorée
+       ============================================================ */
     .contact {
       background: linear-gradient(135deg, var(--dark-bg) 0%, var(--primary-color) 100%);
       color: var(--white);
     }
 
     .contact .section-header h2,
-    .contact .section-header p {
-      color: var(--white);
-    }
+    .contact .section-header p { color: var(--white); }
 
     .contact-grid {
       display: grid;
@@ -882,43 +709,50 @@
     .contact-info {
       display: flex;
       flex-direction: column;
-      gap: 2rem;
+      gap: 1.5rem;
     }
 
     .contact-item {
       display: flex;
-      gap: 1.5rem;
-      padding: 1.5rem;
+      gap: 1.2rem;
+      padding: 1.2rem;
       background: rgba(255, 255, 255, 0.1);
-      border-radius: 10px;
+      border-radius: 12px;
       transition: all 0.3s ease;
+      align-items: center;
     }
 
     .contact-item:hover {
       background: rgba(255, 255, 255, 0.15);
-      transform: translateX(10px);
+      transform: translateX(8px);
     }
 
+    /* Icônes Font Awesome dans les cercles */
     .contact-icon {
-      width: 50px;
-      height: 50px;
+      width: 48px;
+      height: 48px;
+      min-width: 48px;
       background: linear-gradient(135deg, var(--accent-color), var(--secondary-color));
-      border-radius: 10px;
+      border-radius: 12px;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.5rem;
+      font-size: 1.2rem;
+      color: var(--white);
       flex-shrink: 0;
     }
 
     .contact-item-content h3 {
       color: var(--white);
-      font-size: 1rem;
+      font-size: 0.95rem;
       margin-bottom: 0.3rem;
+      font-weight: 600;
     }
 
     .contact-item-content p {
       color: rgba(255, 255, 255, 0.8);
+      font-size: 0.9rem;
+      word-break: break-word;
     }
 
     .contact-item-content a {
@@ -926,6 +760,7 @@
       font-weight: 600;
     }
 
+    /* Formulaire */
     .contact-form {
       background: rgba(255, 255, 255, 0.1);
       backdrop-filter: blur(10px);
@@ -934,42 +769,47 @@
       border: 1px solid rgba(255, 255, 255, 0.2);
     }
 
-    .form-group {
-      margin-bottom: 1.5rem;
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
     }
+
+    .form-group { margin-bottom: 1.2rem; }
 
     .form-group label {
       display: block;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.4rem;
       font-weight: 600;
       color: var(--white);
+      font-size: 0.9rem;
     }
 
     .form-group input,
     .form-group textarea {
       width: 100%;
-      padding: 0.8rem;
+      padding: 0.75rem 1rem;
       border: 1px solid rgba(255, 255, 255, 0.3);
       border-radius: 8px;
       background: rgba(255, 255, 255, 0.1);
       color: var(--white);
       font-family: 'Poppins', sans-serif;
+      font-size: 0.9rem;
       transition: all 0.3s ease;
     }
 
     .form-group input::placeholder,
-    .form-group textarea::placeholder {
-      color: rgba(255, 255, 255, 0.5);
-    }
+    .form-group textarea::placeholder { color: rgba(255, 255, 255, 0.5); }
 
     .form-group input:focus,
     .form-group textarea:focus {
       outline: none;
       background: rgba(255, 255, 255, 0.15);
       border-color: var(--accent-color);
+      box-shadow: 0 0 0 3px rgba(249, 76, 76, 0.15);
     }
 
-    .contact-form button {
+    .contact-form button[type="submit"] {
       width: 100%;
       padding: 1rem;
       background: linear-gradient(135deg, var(--accent-color), #FF6B6B);
@@ -980,9 +820,10 @@
       font-size: 1rem;
       cursor: pointer;
       transition: all 0.3s ease;
+      margin-top: 0.5rem;
     }
 
-    .contact-form button:hover {
+    .contact-form button[type="submit"]:hover {
       transform: translateY(-3px);
       box-shadow: 0 10px 25px rgba(249, 76, 76, 0.3);
     }
@@ -1014,32 +855,13 @@
       margin-bottom: 2rem;
     }
 
-    .footer-section h3 {
-      color: var(--white);
-      font-size: 1.1rem;
-      margin-bottom: 1rem;
-    }
+    .footer-section h3 { color: var(--white); font-size: 1.1rem; margin-bottom: 1rem; }
+    .footer-section ul { list-style: none; }
+    .footer-section ul li { margin-bottom: 0.5rem; }
+    .footer-section ul li a:hover { color: var(--accent-color); }
+    .footer-section p { margin-bottom: 0.5rem; }
 
-    .footer-section ul {
-      list-style: none;
-    }
-
-    .footer-section ul li {
-      margin-bottom: 0.5rem;
-    }
-
-    .footer-section ul li a:hover {
-      color: var(--accent-color);
-    }
-
-    .footer-section p {
-      margin-bottom: 0.5rem;
-    }
-
-    .social-links {
-      display: flex;
-      gap: 1rem;
-    }
+    .social-links { display: flex; gap: 1rem; }
 
     .social-links a {
       width: 40px;
@@ -1065,7 +887,7 @@
       font-size: 0.9rem;
     }
 
-    /* BUTTONS */
+    /* BUTTONS FLOTTANTS */
     .back-to-top {
       position: fixed;
       bottom: 30px;
@@ -1086,14 +908,8 @@
       font-size: 1.5rem;
     }
 
-    .back-to-top.show {
-      opacity: 1;
-      visibility: visible;
-    }
-
-    .back-to-top:hover {
-      transform: translateY(-5px);
-    }
+    .back-to-top.show { opacity: 1; visibility: visible; }
+    .back-to-top:hover { transform: translateY(-5px); }
 
     .whatsapp-btn {
       position: fixed;
@@ -1114,14 +930,9 @@
       z-index: 500;
       text-decoration: none;
     }
-    .whatsapp-btn i {
-      font-size: 1.8rem;
-      color: #fff;
-    }
 
-    .whatsapp-btn:hover {
-      transform: scale(1.1);
-    }
+    .whatsapp-btn i { font-size: 1.8rem; color: #fff; }
+    .whatsapp-btn:hover { transform: scale(1.1); }
 
     /* VISION & MISSION */
     .vision-mission {
@@ -1152,8 +963,17 @@
     }
 
     .vision-icon {
-      font-size: 3rem;
-      margin-bottom: 1.5rem;
+      width: 70px;
+      height: 70px;
+      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.5rem;
+      font-size: 1.8rem;
+      color: var(--white);
+      box-shadow: 0 8px 20px rgba(0, 126, 148, 0.3);
     }
 
     .vision-card h3 {
@@ -1163,11 +983,7 @@
       font-weight: 700;
     }
 
-    .vision-card p {
-      color: var(--text-dark);
-      line-height: 1.7;
-      font-size: 1rem;
-    }
+    .vision-card p { color: var(--text-dark); line-height: 1.7; font-size: 1rem; }
 
     /* STATISTICS */
     .statistics {
@@ -1177,9 +993,7 @@
     }
 
     .statistics .section-header h2,
-    .statistics .section-header p {
-      color: var(--white);
-    }
+    .statistics .section-header p { color: var(--white); }
 
     .statistics .section-header h2::after {
       background: linear-gradient(90deg, var(--accent-color), rgba(255, 255, 255, 0.5));
@@ -1206,148 +1020,103 @@
       transform: translateY(-10px);
     }
 
-    .stat-number {
-      font-size: 3rem;
-      font-weight: 700;
-      color: greenyellow;
-      margin-bottom: 0.5rem;
-      display: block;
-    }
+    .stat-number { font-size: 3rem; font-weight: 700; color: greenyellow; margin-bottom: 0.5rem; display: block; }
+    .stat-label { font-size: 1.2rem; font-weight: 600; margin-bottom: 0.5rem; color: var(--white); }
+    .stat-description { font-size: 0.9rem; color: rgba(255, 255, 255, 0.8); line-height: 1.4; }
 
-    .stat-label {
-      font-size: 1.2rem;
-      font-weight: 600;
-      margin-bottom: 0.5rem;
-      color: var(--white);
-    }
-
-    .stat-description {
-      font-size: 0.9rem;
-      color: rgba(255, 255, 255, 0.8);
-      line-height: 1.4;
-    }
+    /* ============================================================
+       RESPONSIVE
+       ============================================================ */
     @media (max-width: 1024px) {
       .hero-content,
       .about-content,
-      .contact-grid {
-        grid-template-columns: 1fr;
-      }
+      .contact-grid { grid-template-columns: 1fr; }
 
-      .contact-map iframe {
-        height: 300px;
-      }
+      .contact-map iframe { height: 300px; }
 
-      section {
-        padding: 60px 0;
-      }
-
-      .section-header h2 {
-        font-size: 2rem;
-      }
-
-      .hero-text h1 {
-        font-size: 2.2rem;
-      }
+      section { padding: 60px 0; }
+      .section-header h2 { font-size: 2rem; }
+      .hero-text h1 { font-size: 2.2rem; }
     }
 
     @media (max-width: 768px) {
-      nav.desktop-nav {
-        display: none;
-      }
+      nav.desktop-nav { display: none; }
+      .menu-toggle { display: flex; }
 
-      .menu-toggle {
+      .hero { padding: 4rem 0; }
+      .hero-text h1 { font-size: 1.8rem; }
+      .hero-text p { font-size: 1rem; }
+
+      /* ---- Inversion image / texte sur mobile ---- */
+      /* Section About : image en bas, texte en haut */
+      .about-content {
+        grid-template-columns: 1fr;
         display: flex;
+        flex-direction: column;
       }
 
-      .hero {
-        padding: 4rem 0;
+      .about-image { order: 2; }
+      .about-text  { order: 1; }
+
+      /* Section Hero : image en haut, texte en bas */
+      .hero-content {
+        display: flex;
+        flex-direction: column;
       }
 
-      .hero-text h1 {
-        font-size: 1.8rem;
-      }
+      .hero-image { order: 1; }
+      .hero-text  { order: 2; }
+      /* -------------------------------------------- */
 
-      .hero-text p {
-        font-size: 1rem;
-      }
-
-      section {
-        padding: 50px 0;
-      }
-
-      .section-header h2 {
-        font-size: 1.8rem;
-      }
+      section { padding: 50px 0; }
+      .section-header h2 { font-size: 1.8rem; }
 
       .services-grid,
       .partners-grid,
-      .team-grid {
-        grid-template-columns: 1fr;
-      }
+      .team-grid { grid-template-columns: 1fr; }
 
-      .portfolio-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
+      .portfolio-grid { grid-template-columns: repeat(2, 1fr); }
 
       .vision-mission-grid,
-      .stats-grid {
-        grid-template-columns: 1fr;
-      }
+      .stats-grid { grid-template-columns: 1fr; }
 
       .vision-card,
-      .stat-card {
-        padding: 2rem 1.5rem;
-      }
+      .stat-card { padding: 2rem 1.5rem; }
 
-      .stat-number {
-        font-size: 2.5rem;
-      }
+      .stat-number { font-size: 2.5rem; }
 
-      .contact-map iframe {
-        height: 250px;
-      }
+      /* Contact responsive sur mobile */
+      .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
 
-      .whatsapp-btn {
-        bottom: 100px;
-      }
+      .form-row { grid-template-columns: 1fr; }
+
+      .contact-form { padding: 1.5rem; }
+
+      .contact-map iframe { height: 250px; }
+
+      .whatsapp-btn { bottom: 100px; }
     }
 
     @media (max-width: 480px) {
-      .container {
-        padding: 0 15px;
-      }
-
-      .hero-text h1 {
-        font-size: 1.5rem;
-      }
-
-      .section-header h2 {
-        font-size: 1.5rem;
-      }
-
-      .portfolio-grid {
-        grid-template-columns: 1fr;
-      }
+      .container { padding: 0 15px; }
+      .hero-text h1 { font-size: 1.5rem; }
+      .section-header h2 { font-size: 1.5rem; }
+      .portfolio-grid { grid-template-columns: 1fr; }
 
       .back-to-top,
-      .whatsapp-btn {
-        width: 45px;
-        height: 45px;
-        font-size: 1.2rem;
-      }
+      .whatsapp-btn { width: 45px; height: 45px; font-size: 1.2rem; }
 
-      .whatsapp-btn {
-        bottom: 75px;
-        right: 20px;
-      }
+      .whatsapp-btn { bottom: 75px; right: 20px; }
+      .back-to-top { right: 20px; }
 
-      .back-to-top {
-        right: 20px;
-      }
+      .logo { font-size: 1.2rem; }
 
-      .logo {
-        font-size: 1.2rem;
-      }
+      /* Formulaire contact sur très petits écrans */
+      .form-group input,
+      .form-group textarea { font-size: 0.85rem; padding: 0.65rem 0.8rem; }
+
+      .contact-item { flex-direction: column; align-items: flex-start; gap: 0.8rem; }
+      .contact-icon { border-radius: 50%; }
     }
   </style>
 </head>
@@ -1392,7 +1161,6 @@
       <div class="hero-content">
         <div class="hero-text animate-left">
           <h1><span class="">L'eau c'est la vie,</span><br>mais souillée elle peut <span class="">détruire des vies</span></h1>
-          <!-- <p>HYDRAU-ENVIRONNEMENT SERVICES œuvre pour l'amélioration des conditions de vie en garantissant l'accès à une eau potable de qualité.</p> -->
           <a href="#contact" style="display: inline-block; margin-top: 1rem;">
             <button style="background: var(--accent-color); color: white; padding: 1rem 2rem; border-radius: 8px; font-weight: 600; font-size: 1rem;">Demander un devis gratuit</button>
           </a>
@@ -1456,7 +1224,6 @@
           <div class="service-details" id="details-forages">
             <p>Nous assurons la conception, la réalisation et l'équipement de forages d'eau à usage domestique, agricole ou industriel. Nos techniciens expérimentés utilisent des équipements de forage modernes adaptés aux conditions géologiques camerounaises.</p>
             <p>Chaque forage est réalisé dans le strict respect des normes techniques pour garantir sa pérennité, son hygiène et la qualité de l'eau produite.</p>
-      
           </div>
         </div>
 
@@ -1522,7 +1289,7 @@
 
         <div class="service-card animate-slide-bounce" style="animation-delay: 0.5s;">
           <div class="service-image">
-            <img src="img/h.jpg" alt="Maintenance">
+            <img src="img/h.jpg" alt="Plomberie">
           </div>
           <div class="service-content">
             <h3>Plomberie</h3>
@@ -1531,13 +1298,12 @@
           </div>
           <div class="service-details" id="plombier">
             <p>Pour valoriser vos forages et puits, nous proposons la fourniture, l'installation et la maintenance de tous types de pompes adaptées à votre contexte : pompes électriques immergées pour les zones urbanisées, pompes solaires pour les sites isolés ou sans électricité, pompes à motricité humaine (PMH) pour les villages et communautés rurales. Chaque installation est dimensionnée selon le débit du forage et les besoins en eau.</p>
-
           </div>
-        </div> 
+        </div>
 
         <div class="service-card animate-slide-bounce" style="animation-delay: 0.5s;">
           <div class="service-image">
-            <img src="img/h.jpg" alt="Maintenance">
+            <img src="img/h.jpg" alt="Pompes">
           </div>
           <div class="service-content">
             <h3>Installation des pompes électriques, solaires et à motricité humaine</h3>
@@ -1546,7 +1312,6 @@
           </div>
           <div class="service-details" id="details-pompes">
             <p>Pour valoriser vos forages et puits, nous proposons la fourniture, l'installation et la maintenance de tous types de pompes adaptées à votre contexte : pompes électriques immergées pour les zones urbanisées, pompes solaires pour les sites isolés ou sans électricité, pompes à motricité humaine (PMH) pour les villages et communautés rurales. Chaque installation est dimensionnée selon le débit du forage et les besoins en eau.</p>
-            
           </div>
         </div>
       </div>
@@ -1562,12 +1327,12 @@
       </div>
       <div class="vision-mission-grid">
         <div class="vision-card animate-slide-bounce" style="animation-delay: 0.2s;">
-          <div class="vision-icon">🎯</div>
+          <div class="vision-icon"><i class="fa fa-bullseye"></i></div>
           <h3>Notre Mission</h3>
           <p>Garantir à chaque client un accès durable à une eau potable, saine et en quantité suffisante, grâce à des solutions techniques adaptées et respectueuses de l'environnement.</p>
         </div>
         <div class="vision-card animate-slide-bounce">
-          <div class="vision-icon">👁️</div>
+          <div class="vision-icon"><i class="fa fa-eye"></i></div>
           <h3>Notre Vision</h3>
           <p>Devenir le partenaire de référence en matière d'eau et d'assainissement au Cameroun, reconnu pour la qualité, la fiabilité et l'impact social de nos réalisations.</p>
         </div>
@@ -1588,19 +1353,16 @@
           <div class="stat-label">Années d'Expérience</div>
           <div class="stat-description">Depuis notre création en 2015</div>
         </div>
-
         <div class="stat-card animate-cascade" style="animation-delay: 0.1s;">
           <div class="stat-number">200+</div>
           <div class="stat-label">Forages Réalisés</div>
           <div class="stat-description">Dans les 10 régions du Cameroun</div>
         </div>
-
         <div class="stat-card animate-cascade" style="animation-delay: 0.2s;">
           <div class="stat-number">10</div>
           <div class="stat-label">Régions Couvertes</div>
           <div class="stat-description">Partout au Cameroun</div>
         </div>
-
         <div class="stat-card animate-cascade" style="animation-delay: 0.3s;">
           <div class="stat-number">8</div>
           <div class="stat-label">Domaines d'Expertise</div>
@@ -1625,7 +1387,6 @@
             <p>Projets réussis en multi-régions</p>
           </div>
         </div>
-
         <div class="portfolio-item animate" style="animation-delay: 0.1s;">
           <img src="img/4.jpg" alt="Études">
           <div class="portfolio-overlay">
@@ -1633,7 +1394,6 @@
             <p>Ressources hydriques identifiées</p>
           </div>
         </div>
-
         <div class="portfolio-item animate" style="animation-delay: 0.2s;">
           <img src="img/3.jpg" alt="Analyses">
           <div class="portfolio-overlay">
@@ -1641,7 +1401,6 @@
             <p>Qualité de l'eau validée</p>
           </div>
         </div>
-
         <div class="portfolio-item animate" style="animation-delay: 0.3s;">
           <img src="img/15.jpg" alt="Pompes">
           <div class="portfolio-overlay">
@@ -1649,7 +1408,6 @@
             <p>Installation complète</p>
           </div>
         </div>
-
         <div class="portfolio-item animate" style="animation-delay: 0.4s;">
           <img src="img/h.jpg" alt="Châteaux">
           <div class="portfolio-overlay">
@@ -1657,7 +1415,6 @@
             <p>Construction et installation</p>
           </div>
         </div>
-
         <div class="portfolio-item animate" style="animation-delay: 0.5s;">
           <img src="img/16.jpg" alt="Plomberie">
           <div class="portfolio-overlay">
@@ -1678,74 +1435,51 @@
       </div>
       <div class="testimonials-grid">
         <div class="testimonial-card animate-bounce">
-          <div class="testimonial-stars">★★★★★</div>
-          <p class="testimonial-text">"Nous avons fait appel à Hydreausol pour l’installation d’un système d’approvisionnement en eau pour notre exploitation agricole. Travail de qualité et respect des délais."</p>
+          <div class="testimonial-stars"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div>
+          <p class="testimonial-text">"Nous avons fait appel à Hydreausol pour l'installation d'un système d'approvisionnement en eau pour notre exploitation agricole. Travail de qualité et respect des délais."</p>
           <div class="testimonial-author">
-            <div class="author-avatar">👤</div>
-            <div class="author-info">
-              <h4>Touala</h4>
-              <p>Yaoundé</p>
-            </div>
+            <div class="author-avatar"><i class="fa fa-user"></i></div>
+            <div class="author-info"><h4>Touala</h4><p>Yaoundé</p></div>
           </div>
         </div>
-
         <div class="testimonial-card animate-bounce" style="animation-delay: 0.1s;">
-          <div class="testimonial-stars">★★★★★</div>
-          <p class="testimonial-text">"Hydreausol a réalisé notre  forage avec beaucoup de professionnalisme. L’équipe est sérieuse, ponctuelle et très expérimentée. Aujourd’hui nous avons de l’eau potable en permanence. Je recommande fortement cette entreprise."</p>
+          <div class="testimonial-stars"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div>
+          <p class="testimonial-text">"Hydreausol a réalisé notre forage avec beaucoup de professionnalisme. L'équipe est sérieuse, ponctuelle et très expérimentée. Aujourd'hui nous avons de l'eau potable en permanence. Je recommande fortement cette entreprise."</p>
           <div class="testimonial-author">
-            <div class="author-avatar">👤</div>
-            <div class="author-info">
-              <h4>Jean M.</h4>
-              <p>Douala</p>
-            </div>
+            <div class="author-avatar"><i class="fa fa-user"></i></div>
+            <div class="author-info"><h4>Jean M.</h4><p>Douala</p></div>
           </div>
         </div>
-
         <div class="testimonial-card animate-bounce" style="animation-delay: 0.2s;">
-          <div class="testimonial-stars">★★★★★</div>
-          <p class="testimonial-text">"Excellent service ! L’équipe Hydreausol est très compétente et donne de bons conseils pour l’entretien du forages et des cubitenaires. Nous sommes très satisfaits."</p>
+          <div class="testimonial-stars"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div>
+          <p class="testimonial-text">"Excellent service ! L'équipe Hydreausol est très compétente et donne de bons conseils pour l'entretien du forages et des cubitenaires. Nous sommes très satisfaits."</p>
           <div class="testimonial-author">
-            <div class="author-avatar">👤</div>
-            <div class="author-info">
-              <h4>Marie</h4>
-              <p>Douala, bonaberie</p>
-            </div>
+            <div class="author-avatar"><i class="fa fa-user"></i></div>
+            <div class="author-info"><h4>Marie</h4><p>Douala, bonaberie</p></div>
           </div>
         </div>
-
         <div class="testimonial-card animate-bounce" style="animation-delay: 0.3s;">
-          <div class="testimonial-stars">★★★★★</div>
-          <p class="testimonial-text">"Hydreausol nous a aidés à sécuriser l’accès à l’eau potable pour nos élèves. Leur intervention a été rapide et très professionnelle."</p>
+          <div class="testimonial-stars"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div>
+          <p class="testimonial-text">"Hydreausol nous a aidés à sécuriser l'accès à l'eau potable pour nos élèves. Leur intervention a été rapide et très professionnelle."</p>
           <div class="testimonial-author">
-            <div class="author-avatar">👤</div>
-            <div class="author-info">
-              <h4>École Privée Les Étoiles</h4>
-              <p>Région Littoral</p>
-            </div>
+            <div class="author-avatar"><i class="fa fa-user"></i></div>
+            <div class="author-info"><h4>École Privée Les Étoiles</h4><p>Région Littoral</p></div>
           </div>
         </div>
-
         <div class="testimonial-card animate-bounce" style="animation-delay: 0.4s;">
-          <div class="testimonial-stars">★★★★★</div>
-          <p class="testimonial-text">"Hydreausol est une entreprise très sérieuse. Ils ont rapidement trouvé une solution pour notre problème d’eau. Depuis leur intervention, notre forage fonctionne parfaitement."</p>
+          <div class="testimonial-stars"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div>
+          <p class="testimonial-text">"Hydreausol est une entreprise très sérieuse. Ils ont rapidement trouvé une solution pour notre problème d'eau. Depuis leur intervention, notre forage fonctionne parfaitement."</p>
           <div class="testimonial-author">
-            <div class="author-avatar">👤</div>
-            <div class="author-info">
-              <h4>Clarisse B.</h4>
-              <p>Kribi</p>
-            </div>
+            <div class="author-avatar"><i class="fa fa-user"></i></div>
+            <div class="author-info"><h4>Clarisse B.</h4><p>Kribi</p></div>
           </div>
         </div>
-
         <div class="testimonial-card animate-bounce" style="animation-delay: 0.5s;">
-          <div class="testimonial-stars">★★★★★</div>
+          <div class="testimonial-stars"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div>
           <p class="testimonial-text">"Très bonne expérience avec Hydreausol. Le travail est propre, rapide et efficace. Je recommande cette entreprise à toute personne qui cherche un forage de qualité."</p>
           <div class="testimonial-author">
-            <div class="author-avatar">👤</div>
-            <div class="author-info">
-              <h4>Pauline D.</h4>
-              <p>Yaoundé</p>
-            </div>
+            <div class="author-avatar"><i class="fa fa-user"></i></div>
+            <div class="author-info"><h4>Pauline D.</h4><p>Yaoundé</p></div>
           </div>
         </div>
       </div>
@@ -1793,7 +1527,6 @@
             <p>Ingénieurs géophysique et forages</p>
           </div>
         </div>
-
         <div class="team-member animate" style="animation-delay: 0.1s;">
           <div class="team-member-image">
             <img src="img/17.jpg" alt="Terrain">
@@ -1803,7 +1536,6 @@
             <p>Techniciens installation et maintenance</p>
           </div>
         </div>
-
         <div class="team-member animate" style="animation-delay: 0.2s;">
           <div class="team-member-image">
             <img src="img/e.jpg" alt="Labo">
@@ -1826,9 +1558,12 @@
       </div>
 
       <div class="contact-grid">
+        <!-- Infos de contact avec icônes Font Awesome -->
         <div class="contact-info">
           <div class="contact-item animate">
-            <div class="contact-icon">📍</div>
+            <div class="contact-icon">
+              <i class="fa fa-map-marker-alt"></i>
+            </div>
             <div class="contact-item-content">
               <h3>Localisation</h3>
               <p>Cameroun, Yaoundé - Douala</p>
@@ -1836,7 +1571,9 @@
           </div>
 
           <div class="contact-item animate" style="animation-delay: 0.1s;">
-            <div class="contact-icon">📞</div>
+            <div class="contact-icon">
+              <i class="fa fa-phone-alt"></i>
+            </div>
             <div class="contact-item-content">
               <h3>Téléphone</h3>
               <p><a href="tel:+237673249694">+237 673 249 694</a></p>
@@ -1844,7 +1581,9 @@
           </div>
 
           <div class="contact-item animate" style="animation-delay: 0.2s;">
-            <div class="contact-icon">✉️</div>
+            <div class="contact-icon">
+              <i class="fa fa-envelope"></i>
+            </div>
             <div class="contact-item-content">
               <h3>Email</h3>
               <p><a href="mailto:hydrauenvironnement@gmail.com">hydrauenvironnement@gmail.com</a></p>
@@ -1852,36 +1591,55 @@
           </div>
 
           <div class="contact-item animate" style="animation-delay: 0.3s;">
-            <div class="contact-icon">👍</div>
+            <div class="contact-icon">
+              <i class="fa fa-facebook-f"></i>
+            </div>
             <div class="contact-item-content">
               <h3>Réseaux Sociaux</h3>
               <p><a href="https://web.facebook.com/profile.php?id=100063889519936" target="_blank">Facebook</a></p>
             </div>
           </div>
+
+          <div class="contact-item animate" style="animation-delay: 0.4s;">
+            <div class="contact-icon" style="background: linear-gradient(135deg, #25D366, #128C7E);">
+              <i class="fa fa-whatsapp"></i>
+            </div>
+            <div class="contact-item-content">
+              <h3>WhatsApp</h3>
+              <p><a href="https://api.whatsapp.com/send?phone=237673249694" target="_blank">+237 673 249 694</a></p>
+            </div>
+          </div>
         </div>
 
+        <!-- Formulaire avec layout en grille responsive -->
         <form class="contact-form animate">
-          <div class="form-group">
-            <label for="name">Nom Complet *</label>
-            <input type="text" id="name" name="name" required placeholder="Votre nom">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Nom Complet *</label>
+              <input type="text" id="name" name="name" required placeholder="Votre nom">
+            </div>
+            <div class="form-group">
+              <label for="email">Email *</label>
+              <input type="email" id="email" name="email" required placeholder="votre@email.com">
+            </div>
           </div>
-          <div class="form-group">
-            <label for="email">Email *</label>
-            <input type="email" id="email" name="email" required placeholder="votre@email.com">
-          </div>
-          <div class="form-group">
-            <label for="phone">Téléphone *</label>
-            <input type="tel" id="phone" name="phone" required placeholder="+237 6XX XXX XXX">
-          </div>
-          <div class="form-group">
-            <label for="subject">Sujet *</label>
-            <input type="text" id="subject" name="subject" required placeholder="Sujet">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="phone">Téléphone *</label>
+              <input type="tel" id="phone" name="phone" required placeholder="+237 6XX XXX XXX">
+            </div>
+            <div class="form-group">
+              <label for="subject">Sujet *</label>
+              <input type="text" id="subject" name="subject" required placeholder="Sujet de votre message">
+            </div>
           </div>
           <div class="form-group">
             <label for="message">Message *</label>
-            <textarea id="message" name="message" required placeholder="Votre message..." rows="5"></textarea>
+            <textarea id="message" name="message" required placeholder="Décrivez votre besoin en eau..." rows="6"></textarea>
           </div>
-          <button type="submit">Envoyer</button>
+          <button type="submit">
+            <i class="fa fa-paper-plane" style="margin-right: 8px;"></i>Envoyer le message
+          </button>
           <p id="form-message" style="margin-top: 1rem; text-align: center; display: none;"></p>
         </form>
       </div>
@@ -1898,13 +1656,17 @@
       <div class="footer-content">
         <div class="footer-section">
           <h3>À Propos</h3>
-          <p>
-            Parce que l'eau c'est la vie, mais souillée elle peut détruire des vies, l'entreprise HYDREAUSOL SARL est soucieuse de l'amélioration des conditions de vie des populations sur l'ensemble du triangle national camerounais, notamment en ce qui concerne l'accès à l'eau potable.
-          </p>
+          <p>Parce que l'eau c'est la vie, mais souillée elle peut détruire des vies, l'entreprise HYDREAUSOL SARL est soucieuse de l'amélioration des conditions de vie des populations sur l'ensemble du triangle national camerounais, notamment en ce qui concerne l'accès à l'eau potable.</p>
           <div class="social-links" style="margin-top: 1rem;">
-            <a href="https://web.facebook.com/profile.php?id=100063889519936" target="_blank" rel="noopener noreferrer"><i class="fa fa-facebook"></i></a>
-            <a href="https://api.whatsapp.com/send?phone=237673249694" target="_blank" rel="noopener noreferrer"><i class="fa fa-whatsapp"></i></a>
-            <a href="mailto:hydrauenvironnement@gmail.com" target="_blank" rel="noopener noreferrer"><i class="fa fa-envelope"></i></a>
+            <a href="https://web.facebook.com/profile.php?id=100063889519936" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+              <i class="fa fa-facebook-f"></i>
+            </a>
+            <a href="https://api.whatsapp.com/send?phone=237673249694" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+              <i class="fa fa-whatsapp"></i>
+            </a>
+            <a href="mailto:hydrauenvironnement@gmail.com" target="_blank" rel="noopener noreferrer" aria-label="Email">
+              <i class="fa fa-envelope"></i>
+            </a>
           </div>
         </div>
 
@@ -1932,9 +1694,9 @@
 
         <div class="footer-section">
           <h3>Contact</h3>
-          <p>📍 Cameroun, Yaoundé - Douala</p>
-          <p>📞 <a href="tel:+237673249694">+237 673 249 694</a></p>
-          <p>✉️ <a href="mailto:hydrauenvironnement@gmail.com">hydrauenvironnement@gmail.com</a></p>
+          <p><i class="fa fa-map-marker-alt" style="margin-right:6px; color: var(--secondary-color);"></i> Cameroun, Yaoundé - Douala</p>
+          <p><i class="fa fa-phone-alt" style="margin-right:6px; color: var(--secondary-color);"></i> <a href="tel:+237673249694">+237 673 249 694</a></p>
+          <p><i class="fa fa-envelope" style="margin-right:6px; color: var(--secondary-color);"></i> <a href="mailto:hydrauenvironnement@gmail.com">hydrauenvironnement@gmail.com</a></p>
         </div>
       </div>
 
@@ -1945,37 +1707,37 @@
     </div>
   </footer>
 
-  <!-- BUTTONS -->
-  <button class="back-to-top" id="backToTop">↑</button>
-  <a title="Contacter sur WhatsApp" aria-label="Contacter sur WhatsApp" href="https://api.whatsapp.com/send?phone=237673249694&text=Salut%0A" target="_blank" rel="noopener noreferrer" class="whatsapp-btn"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
+  <!-- BUTTONS FLOTTANTS -->
+  <button class="back-to-top" id="backToTop" aria-label="Retour en haut">
+    <i class="fa fa-chevron-up"></i>
+  </button>
+  <a title="Contacter sur WhatsApp" aria-label="Contacter sur WhatsApp"
+     href="https://api.whatsapp.com/send?phone=237673249694&text=Salut%0A"
+     target="_blank" rel="noopener noreferrer" class="whatsapp-btn">
+    <i class="fa fa-whatsapp" aria-hidden="true"></i>
+  </a>
 
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script>
-    // Service details toggle - GLOBAL SCOPE
+    // Service details toggle
     function toggleServiceDetails(button) {
       const card = button.closest('.service-card');
       const details = card.querySelector('.service-details');
 
-      // Close all other open details
       document.querySelectorAll('.service-details.expanded').forEach(openDetails => {
         if (openDetails !== details) {
           openDetails.classList.remove('expanded');
-          // Reset all buttons to "En savoir plus"
           const otherButton = openDetails.closest('.service-card').querySelector('.service-btn');
-          if (otherButton) {
-            otherButton.textContent = 'En savoir plus';
-          }
+          if (otherButton) otherButton.textContent = 'En savoir plus';
         }
       });
 
-      // Toggle current details
       if (details.classList.contains('expanded')) {
         details.classList.remove('expanded');
         button.textContent = 'En savoir plus';
       } else {
         details.classList.add('expanded');
         button.textContent = 'Réduire';
-        // Scroll to show details
         setTimeout(() => {
           details.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
         }, 300);
@@ -1986,11 +1748,8 @@
       const details = button.closest('.service-details');
       const card = details.closest('.service-card');
       const serviceBtn = card.querySelector('.service-btn');
-
       details.classList.remove('expanded');
-      if (serviceBtn) {
-        serviceBtn.textContent = 'En savoir plus';
-      }
+      if (serviceBtn) serviceBtn.textContent = 'En savoir plus';
     }
 
     $(document).ready(function() {
@@ -2019,7 +1778,7 @@
         }
       });
 
-      // Scroll animations progressives et fluides
+      // Scroll animations
       let animationQueue = [];
       let isAnimating = false;
 
@@ -2030,190 +1789,87 @@
 
         elements.forEach((el, index) => {
           const elementPosition = el.getBoundingClientRect().top;
-          const screenPosition = window.innerHeight * 0.8; // Plus haut pour déclenchement anticipé
+          const screenPosition = window.innerHeight * 0.8;
 
           if (elementPosition < screenPosition && !el.classList.contains('animated') && !el.classList.contains('queued')) {
             el.classList.add('queued');
+            let baseDelay = 0, staggerDelay = 0;
+            if (isMobile) { baseDelay = Math.floor(index / 6) * 300; staggerDelay = (index % 6) * 150; }
+            else if (isTablet) { baseDelay = Math.floor(index / 4) * 200; staggerDelay = (index % 4) * 100; }
+            else { baseDelay = Math.floor(index / 5) * 150; staggerDelay = (index % 5) * 80; }
 
-            // Configuration des délais selon le device et la position
-            let baseDelay = 0;
-            let staggerDelay = 0;
-
-            if (isMobile) {
-              // Mobile : vague lente et progressive
-              baseDelay = Math.floor(index / 6) * 300; // Groupes de 6 éléments
-              staggerDelay = (index % 6) * 150; // 150ms entre éléments du même groupe
-            } else if (isTablet) {
-              // Tablet : vague moyenne
-              baseDelay = Math.floor(index / 4) * 200; // Groupes de 4 éléments
-              staggerDelay = (index % 4) * 100; // 100ms entre éléments du même groupe
-            } else {
-              // Desktop : vague rapide et dynamique
-              baseDelay = Math.floor(index / 5) * 150; // Groupes de 5 éléments
-              staggerDelay = (index % 5) * 80; // 80ms entre éléments du même groupe
-            }
-
-            const totalDelay = baseDelay + staggerDelay;
-
-            // Ajouter à la file d'attente avec délai progressif
-            animationQueue.push({
-              element: el,
-              delay: totalDelay,
-              timestamp: Date.now() + totalDelay
-            });
+            animationQueue.push({ element: el, delay: baseDelay + staggerDelay, timestamp: Date.now() + baseDelay + staggerDelay });
           }
         });
 
-        // Trier la file par timestamp pour un déclenchement ordonné
         animationQueue.sort((a, b) => a.timestamp - b.timestamp);
-
-        // Traiter la file d'attente
         processAnimationQueue();
       }
 
       function processAnimationQueue() {
         if (isAnimating || animationQueue.length === 0) return;
-
         isAnimating = true;
-
         const now = Date.now();
         const readyAnimations = animationQueue.filter(item => item.timestamp <= now);
-
         if (readyAnimations.length > 0) {
-          // Traiter les animations prêtes
           readyAnimations.forEach(item => {
-            setTimeout(() => {
-              item.element.classList.remove('queued');
-              item.element.classList.add('animated');
-            }, Math.random() * 50); // Petit délai aléatoire pour plus de naturel
+            setTimeout(() => { item.element.classList.remove('queued'); item.element.classList.add('animated'); }, Math.random() * 50);
           });
-
-          // Retirer les animations traitées
           animationQueue = animationQueue.filter(item => item.timestamp > now);
         }
-
         isAnimating = false;
-
-        // Continuer si il reste des animations
-        if (animationQueue.length > 0) {
-          requestAnimationFrame(processAnimationQueue);
-        }
+        if (animationQueue.length > 0) requestAnimationFrame(processAnimationQueue);
       }
 
-      // Gestion du scroll avec optimisation des performances
-      let scrollTimeout;
       let ticking = false;
-
       function onScroll() {
-        if (!ticking) {
-          requestAnimationFrame(() => {
-            handleScroll();
-            ticking = false;
-          });
-          ticking = true;
-        }
-
-        // Reset du timeout pour les animations continues
-        clearTimeout(scrollTimeout);
-        scrollTimeout = setTimeout(() => {
-          // Vérifier s'il y a des éléments manqués après l'arrêt du scroll
-          handleScroll();
-        }, 150);
+        if (!ticking) { requestAnimationFrame(() => { handleScroll(); ticking = false; }); ticking = true; }
       }
 
       window.addEventListener('scroll', onScroll, { passive: true });
-      handleScroll(); // Animation initiale
-
-      // Recalculer les animations au redimensionnement avec debounce
-      let resizeTimeout;
-      let lastWidth = window.innerWidth;
-
-      window.addEventListener('resize', function() {
-        clearTimeout(resizeTimeout);
-        const currentWidth = window.innerWidth;
-
-        // Seulement recalculer si le changement de taille est significatif
-        if (Math.abs(currentWidth - lastWidth) > 50) {
-          resizeTimeout = setTimeout(function() {
-            // Reset des animations pour les recalculer
-            const animatedElements = document.querySelectorAll('.animate.animated, .animate-left.animated, .animate-right.animated, .animate-bounce.animated, .animate-slide-bounce.animated, .animate.queued, .animate-left.queued, .animate-right.queued, .animate-bounce.queued, .animate-slide-bounce.queued');
-            animatedElements.forEach(el => {
-              el.classList.remove('animated', 'queued');
-            });
-
-            // Vider la file d'attente
-            animationQueue = [];
-
-            // Recalculer après un court délai
-            setTimeout(() => {
-              handleScroll();
-              lastWidth = window.innerWidth;
-            }, 200);
-          }, 300);
-        }
-      });
+      handleScroll();
 
       // Back to top
       const backToTop = $('#backToTop');
       $(window).scroll(function() {
-        if ($(this).scrollTop() > 200) {
-          backToTop.addClass('show');
-        } else {
-          backToTop.removeClass('show');
-        }
+        if ($(this).scrollTop() > 200) { backToTop.addClass('show'); } else { backToTop.removeClass('show'); }
       });
 
-      backToTop.click(function() {
-        $('html, body').animate({ scrollTop: 0 }, 800);
-      });
+      backToTop.click(function() { $('html, body').animate({ scrollTop: 0 }, 800); });
 
       // Smooth scroll
       $('a[href^="#"]').click(function(e) {
         const target = $(this.getAttribute('href'));
-        if (target.length) {
-          $('html, body').animate({
-            scrollTop: target.offset().top - 70
-          }, 800);
-        }
+        if (target.length) { $('html, body').animate({ scrollTop: target.offset().top - 70 }, 800); }
       });
 
-      // Auto-scroll horizontal portfolio gallery
+      // Auto-scroll portfolio
       const $portfolio = $('.portfolio-grid');
       if ($portfolio.length) {
-        const step = 260; // roughly card width + gap
+        const step = 260;
         setInterval(() => {
           const el = $portfolio[0];
           const max = el.scrollWidth - el.clientWidth;
           const atEnd = Math.ceil(el.scrollLeft) >= Math.floor(max) - 1;
-          if (atEnd) {
-            $portfolio.animate({ scrollLeft: 0 }, 500);
-            el.scrollLeft = step;
-          } else {
-            let next = el.scrollLeft + step;
-            if (next > max) next = max;
-            $portfolio.animate({ scrollLeft: next }, 500);
-          }
+          if (atEnd) { $portfolio.animate({ scrollLeft: 0 }, 500); el.scrollLeft = step; }
+          else { let next = el.scrollLeft + step; if (next > max) next = max; $portfolio.animate({ scrollLeft: next }, 500); }
         }, 4000);
       }
 
       // Form submission
       $('form').submit(function(e) {
         e.preventDefault();
-        const name = $('#name').val();
-        const email = $('#email').val();
-        const phone = $('#phone').val();
-        const subject = $('#subject').val();
-        const message = $('#message').val();
+        const name = $('#name').val(), email = $('#email').val(),
+              phone = $('#phone').val(), subject = $('#subject').val(),
+              message = $('#message').val();
         const formMessage = $('#form-message');
 
         if (name && email && phone && subject && message) {
-          formMessage.text('✅ Message envoyé! Nous vous recontacterons bientôt.').show().css('color', '#4CAF50');
+          formMessage.html('<i class="fa fa-check-circle" style="margin-right:6px;"></i>Message envoyé ! Nous vous recontacterons bientôt.').show().css('color', '#4CAF50');
           $('form')[0].reset();
-          setTimeout(() => {
-            formMessage.fadeOut();
-          }, 5000);
+          setTimeout(() => { formMessage.fadeOut(); }, 5000);
         } else {
-          formMessage.text('❌ Veuillez remplir tous les champs').show().css('color', '#F94C4C');
+          formMessage.html('<i class="fa fa-times-circle" style="margin-right:6px;"></i>Veuillez remplir tous les champs obligatoires.').show().css('color', '#F94C4C');
         }
       });
     });
