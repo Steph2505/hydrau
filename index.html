@@ -6,12 +6,9 @@
   <title>Hydrau-Environnement Services</title>
   <meta name="keywords" content="forage d'eau Yaoundé, forage Douala, entreprise de forage au Cameroun, plomberie, traitement des eaux, assainissement, études géophysiques">
   <meta name="description" content="Hydrau-Environnement SARL : forages, analyses, traitement et assainissement au Cameroun. Solutions durables en eau potable.">
-
-   <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-  <!-- Font Awesome for icons -->
+  <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-pVnzyP6fX2WmVH16KqkDZS08P3O79h+tZlKkwIO/B4Lf5kyzE+1MRhVulbkIW0wu1yaTtkvq1W7Fk8SBgjF3MQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-pVnzyP6fX2WmVH16KqkDZS08P3O79h+tZlKkwIO/B4Lf5kyzE+1MRhVulbkIW0wu1yaTtkvq1W7Fk8SBgjF3MQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <style>
     :root {
       --primary-color: #007E94;
@@ -70,36 +67,144 @@
       .animate:nth-child(6) { animation-delay: 1s; }
     }
 
-    /* HEADER */
-    header { background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%); padding: 1rem 0; position: fixed; top: 0; width: 100%; z-index: 1000; box-shadow: var(--shadow); transition: all 0.3s ease; }
-    header.scrolled { padding: 0.5rem 0; box-shadow: var(--shadow-lg); }
-    .header-content { display: flex; justify-content: space-between; align-items: center; }
-    .logo { display: flex; align-items: center; gap: 10px; color: var(--white); font-weight: 700; font-size: 1.5rem; cursor: pointer; }
-    .logo img { max-width: 50px; height: auto; }
-    nav.desktop-nav { display: flex; gap: 2rem; }
-    nav.desktop-nav a { color: rgba(255,255,255,0.8); font-weight: 600; font-size: 0.95rem; position: relative; padding-bottom: 5px; }
-    nav.desktop-nav a::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px; background-color: var(--accent-color); transition: width 0.3s ease; }
-    nav.desktop-nav a:hover { color: var(--white); }
-    nav.desktop-nav a:hover::after { width: 100%; }
-    .menu-toggle { display: none; flex-direction: column; gap: 6px; background: none; cursor: pointer; }
-    .menu-toggle span { width: 25px; height: 3px; background-color: var(--white); border-radius: 3px; transition: all 0.4s cubic-bezier(0.68,-0.55,0.265,1.55); transform-origin: center; }
-    .menu-toggle.active span:nth-child(1) { transform: rotate(45deg) translateY(10px) scaleX(0.8); }
+    /* ============================================================
+       HEADER GLASSMORPHISM
+       ============================================================ */
+    header {
+      background: rgba(255,255,255,0.20);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(255,255,255,0.30);
+      padding: 0.55rem 0;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      transition: all 0.3s ease;
+    }
+    header.scrolled {
+      background: rgba(255,255,255,0.60);
+      box-shadow: 0 4px 24px rgba(0,126,148,0.12);
+    }
+    .header-content {
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1.5rem;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      /* background: rgba(255,255,255,0.80); */
+      /* border: 1px solid rgba(255,255,255,0.95); */
+      /* border-radius: 50px; */
+      padding: 5px 14px 5px 5px;
+      cursor: pointer;
+      flex-shrink: 0;
+      /* box-shadow: 0 2px 10px rgba(0,0,0,0.08); */
+      transition: box-shadow 0.3s;
+    }
+    .logo:hover { box-shadow: 0 4px 18px rgba(0,126,148,0.18); }
+    .logo img { width: 251px; height: 72px; object-fit: cover; }
+    .logo span { font-weight: 700; font-size: 0.8rem; color: var(--primary-color); line-height: 1.25; white-space: nowrap; }
+    nav.desktop-nav {
+      display: flex;
+      gap: 0.1rem;
+      flex: 1;
+      justify-content: center;
+    }
+    nav.desktop-nav a {
+      color: var(--text-dark);
+      font-weight: 500;
+      font-size: 0.88rem;
+      padding: 0.42rem 0.85rem;
+      border-radius: 50px;
+      white-space: nowrap;
+      transition: all 0.25s ease;
+    }
+    nav.desktop-nav a:hover {
+      background: rgba(0,126,148,0.10);
+      color: var(--primary-color);
+    }
+    .nav-cta {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      background: transparent;
+      border: 1.5px solid var(--primary-color);
+      color: var(--primary-color);
+      font-weight: 600;
+      font-size: 0.83rem;
+      padding: 7px 16px;
+      border-radius: 50px;
+      white-space: nowrap;
+      flex-shrink: 0;
+      transition: all 0.25s ease;
+      cursor: pointer;
+    }
+    .nav-cta:hover { background: var(--primary-color); color: var(--white); }
+    .nav-cta i { font-size: 0.9rem; }
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: rgba(255,255,255,0.75);
+      border: 1px solid rgba(255,255,255,0.95);
+      border-radius: 10px;
+      padding: 8px;
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+    .menu-toggle span { width: 22px; height: 2.5px; background-color: var(--primary-color); border-radius: 3px; transition: all 0.4s cubic-bezier(0.68,-0.55,0.265,1.55); transform-origin: center; }
+    .menu-toggle.active span:nth-child(1) { transform: rotate(45deg) translateY(9px) scaleX(0.85); }
     .menu-toggle.active span:nth-child(2) { opacity: 0; transform: scaleX(0); }
-    .menu-toggle.active span:nth-child(3) { transform: rotate(-45deg) translateY(-10px) scaleX(0.8); }
-    .mobile-nav { position: fixed; top: 70px; left: 0; width: 100%; background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%); padding: 2rem; display: none; flex-direction: column; gap: 1rem; z-index: 999; box-shadow: var(--shadow); transform: translateY(-20px); opacity: 0; transition: all 0.4s cubic-bezier(0.68,-0.55,0.265,1.55); }
+    .menu-toggle.active span:nth-child(3) { transform: rotate(-45deg) translateY(-9px) scaleX(0.85); }
+    .mobile-nav {
+      position: fixed;
+      top: 63px;
+      left: 1rem;
+      right: 1rem;
+      background: rgba(255,255,255,0.96);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255,255,255,0.8);
+      border-radius: 20px;
+      padding: 1rem;
+      display: none;
+      flex-direction: column;
+      gap: 0.25rem;
+      z-index: 999;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+      transform: translateY(-10px);
+      opacity: 0;
+      transition: all 0.35s cubic-bezier(0.68,-0.55,0.265,1.55);
+    }
     .mobile-nav.active { display: flex; transform: translateY(0); opacity: 1; }
-    .mobile-nav a { color: var(--white); font-weight: 600; padding: 1rem; transform: translateX(-30px); opacity: 0; transition: all 0.3s cubic-bezier(0.68,-0.55,0.265,1.55); }
-    .mobile-nav.active a:nth-child(1) { transition-delay: 0.1s; }
-    .mobile-nav.active a:nth-child(2) { transition-delay: 0.2s; }
-    .mobile-nav.active a:nth-child(3) { transition-delay: 0.3s; }
-    .mobile-nav.active a:nth-child(4) { transition-delay: 0.4s; }
-    .mobile-nav.active a:nth-child(5) { transition-delay: 0.5s; }
-    .mobile-nav.active a:nth-child(6) { transition-delay: 0.6s; }
-    .mobile-nav.active a:nth-child(7) { transition-delay: 0.7s; }
+    .mobile-nav a {
+      color: var(--text-dark);
+      font-weight: 600;
+      padding: 0.75rem 1rem;
+      border-radius: 12px;
+      transform: translateX(-20px);
+      opacity: 0;
+      transition: all 0.3s cubic-bezier(0.68,-0.55,0.265,1.55);
+    }
+    .mobile-nav a:hover { background: rgba(0,126,148,0.08); color: var(--primary-color); }
+    .mobile-nav.active a:nth-child(1) { transition-delay: 0.05s; }
+    .mobile-nav.active a:nth-child(2) { transition-delay: 0.10s; }
+    .mobile-nav.active a:nth-child(3) { transition-delay: 0.15s; }
+    .mobile-nav.active a:nth-child(4) { transition-delay: 0.20s; }
+    .mobile-nav.active a:nth-child(5) { transition-delay: 0.25s; }
+    .mobile-nav.active a:nth-child(6) { transition-delay: 0.30s; }
+    .mobile-nav.active a:nth-child(7) { transition-delay: 0.35s; }
     .mobile-nav.active a { transform: translateX(0); opacity: 1; }
 
     /* HERO */
-    .hero { margin-top: 70px; background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%); color: var(--white); padding: 6rem 0; position: relative; overflow: hidden; }
+    .hero { margin-top: 63px; background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%); color: var(--white); padding: 6rem 0; position: relative; overflow: hidden; }
     .hero-content { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; }
     .hero-text h1 { font-size: 3rem; margin-bottom: 1rem; line-height: 1.2; }
     .hero-text p { font-size: 1.1rem; margin-bottom: 2rem; opacity: 0.95; }
@@ -129,7 +234,6 @@
     .service-card:hover .service-image img { transform: scale(1.1); }
     .service-overlay { position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,126,148,0.9); display: flex; align-items: center; justify-content: center; opacity: 0; transition: all 0.3s ease; padding: 1rem; }
     .service-card:hover .service-overlay { opacity: 1; }
-    .service-overlay-text { color: var(--white); text-align: center; font-size: 0.95rem; line-height: 1.6; }
     .service-content { padding: 2rem; text-align: center; }
     .service-content h3 { font-size: 1.3rem; color: var(--primary-color); margin-bottom: 0.8rem; }
     .service-content p { color: var(--text-light); font-size: 0.95rem; margin-bottom: 1.5rem; }
@@ -162,21 +266,14 @@
     .contact-map { border-radius: 15px; overflow: hidden; box-shadow: var(--shadow-lg); }
     .contact-map iframe { width: 100%; height: 400px; border: none; }
 
-    /* ============================================================
-       SLIDER HORIZONTAL UNIFORME
-       Même comportement pour portfolio, références, témoignages :
-       flex + overflow-x auto + scrollbar cachée + auto-scroll JS
-       ============================================================ */
+    /* SLIDER HORIZONTAL UNIFORME */
     .portfolio { background-color: var(--light-bg); }
     .references { background: linear-gradient(135deg, #f8f9fa 0%, #e8f5f7 100%); }
     .testimonials { background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%); color: var(--white); }
     .testimonials .section-header h2, .testimonials .section-header p { color: var(--white); }
     .testimonials .section-header h2::after { background: linear-gradient(90deg, var(--accent-color), rgba(255,255,255,0.5)); }
 
-    /* Le grid commun aux 3 sections */
-    .portfolio-grid,
-    .references-grid,
-    .testimonials-grid {
+    .portfolio-grid, .references-grid, .testimonials-grid {
       display: flex;
       overflow-x: auto;
       scroll-behavior: smooth;
@@ -185,22 +282,9 @@
       -ms-overflow-style: none;
       scrollbar-width: none;
     }
-    .portfolio-grid::-webkit-scrollbar,
-    .references-grid::-webkit-scrollbar,
-    .testimonials-grid::-webkit-scrollbar { display: none; }
+    .portfolio-grid::-webkit-scrollbar, .references-grid::-webkit-scrollbar, .testimonials-grid::-webkit-scrollbar { display: none; }
 
-    /* PORTFOLIO items */
-    .portfolio-item {
-      flex: 0 0 250px;
-      min-width: 250px;
-      position: relative;
-      border-radius: 15px;
-      overflow: hidden;
-      height: 280px;
-      cursor: pointer;
-      box-shadow: var(--shadow);
-      transition: all 0.3s ease;
-    }
+    .portfolio-item { flex: 0 0 250px; min-width: 250px; position: relative; border-radius: 15px; overflow: hidden; height: 280px; cursor: pointer; box-shadow: var(--shadow); transition: all 0.3s ease; }
     .portfolio-item:hover { transform: scale(1.05); box-shadow: var(--shadow-lg); }
     .portfolio-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease; }
     .portfolio-item:hover img { transform: scale(1.1); }
@@ -209,37 +293,12 @@
     .portfolio-overlay h3 { font-size: 1.2rem; margin-bottom: 0.5rem; }
     .portfolio-overlay p { font-size: 0.85rem; opacity: 0.9; }
 
-    /* REFERENCES items */
-    .reference-item {
-      flex: 0 0 250px;
-      min-width: 250px;
-      background: var(--white);
-      padding: 2rem;
-      border-radius: 15px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 150px;
-      box-shadow: var(--shadow);
-      transition: all 0.3s ease;
-      flex-direction: column;
-      gap: 20px;
-    }
+    .reference-item { flex: 0 0 250px; min-width: 250px; background: var(--white); padding: 2rem; border-radius: 15px; display: flex; align-items: center; justify-content: center; min-height: 150px; box-shadow: var(--shadow); transition: all 0.3s ease; flex-direction: column; gap: 20px; }
     .reference-item:hover { transform: translateY(-10px); box-shadow: var(--shadow-lg); }
     .reference-item img { max-height: 180px; max-width: 90%; }
     .reference-item p { color: var(--primary-color); font-weight: 700; font-size: 1.2rem; text-align: center; }
 
-    /* TESTIMONIALS items */
-    .testimonial-card {
-      flex: 0 0 340px;
-      min-width: 340px;
-      background: rgba(255,255,255,0.1);
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255,255,255,0.2);
-      border-radius: 15px;
-      padding: 2rem;
-      transition: all 0.3s ease;
-    }
+    .testimonial-card { flex: 0 0 340px; min-width: 340px; background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.2); border-radius: 15px; padding: 2rem; transition: all 0.3s ease; }
     .testimonial-card:hover { background: rgba(255,255,255,0.15); transform: translateY(-10px); }
     .testimonial-stars { color: #FFD700; font-size: 1rem; margin-bottom: 1rem; letter-spacing: 2px; }
     .testimonial-text { font-style: italic; margin-bottom: 1.5rem; line-height: 1.8; }
@@ -308,14 +367,15 @@
       section { padding: 60px 0; }
       .section-header h2 { font-size: 2rem; }
       .hero-text h1 { font-size: 2.2rem; }
+      nav.desktop-nav a { font-size: 0.8rem; padding: 0.4rem 0.6rem; }
+      .nav-cta { font-size: 0.78rem; padding: 6px 12px; }
     }
-
     @media (max-width: 768px) {
       nav.desktop-nav { display: none; }
+      .nav-cta { display: none; }
       .menu-toggle { display: flex; }
       .hero { padding: 4rem 0; }
       .hero-text h1 { font-size: 1.8rem; }
-      .hero-text p { font-size: 1rem; }
       .about-content { display: flex; flex-direction: column; }
       .about-image { order: 2; }
       .about-text { order: 1; }
@@ -336,8 +396,8 @@
       .portfolio-item { flex: 0 0 220px; min-width: 220px; }
       .reference-item { flex: 0 0 220px; min-width: 220px; }
       .testimonial-card { flex: 0 0 85vw; min-width: 85vw; }
+      .header-content { padding: 0 1rem; }
     }
-
     @media (max-width: 480px) {
       .container { padding: 0 15px; }
       .hero-text h1 { font-size: 1.5rem; }
@@ -345,7 +405,7 @@
       .back-to-top, .whatsapp-btn { width: 45px; height: 45px; font-size: 1.2rem; }
       .whatsapp-btn { bottom: 75px; right: 20px; }
       .back-to-top { right: 20px; }
-      .logo { font-size: 1.2rem; }
+      .logo span { display: none; }
       .form-group input, .form-group textarea { font-size: 0.85rem; padding: 0.65rem 0.8rem; }
       .contact-item { flex-direction: column; align-items: flex-start; gap: 0.8rem; }
       .contact-icon { border-radius: 50%; }
@@ -356,24 +416,25 @@
 
   <!-- HEADER -->
   <header id="header">
-    <div class="container">
-      <div class="header-content">
-        <div class="logo">
-          <img src="img/logo hydreau.jpeg" alt="Hydrau Logo">
-        </div>
-        <nav class="desktop-nav">
-          <a href="#services">Services</a>
-          <a href="#contact">Contact</a>
-          <a href="#portfolio">Réalisations</a>
-          <a href="#references">Références</a>
-          <a href="#testimonials">Témoignages</a>
-          <a href="#statistics">Chiffres</a>
-          <a href="#team">Équipe</a>
-        </nav>
-        <button class="menu-toggle" id="menuToggle">
-          <span></span><span></span><span></span>
-        </button>
+    <div class="header-content">
+      <div class="logo">
+        <img src="img/logo_hydreau.png" alt="Hydreausol SARL">
       </div>
+      <nav class="desktop-nav">
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+        <a href="#portfolio">Réalisations</a>
+        <a href="#references">Références</a>
+        <a href="#testimonials">Témoignages</a>
+        <a href="#statistics">Chiffres</a>
+        <a href="#team">Équipe</a>
+      </nav>
+      <a href="tel:+237673249694" class="nav-cta">
+        <i class="fa fa-phone"></i> +237 673 249 694
+      </a>
+      <button class="menu-toggle" id="menuToggle">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </header>
 
@@ -393,8 +454,8 @@
       <div class="hero-content">
         <div class="hero-text animate-left">
           <h1>L'eau c'est la vie,<br>mais souillée elle peut détruire des vies</h1>
-          <a href="#contact" style="display: inline-block; margin-top: 1rem;">
-            <button style="background: var(--accent-color); color: white; padding: 1rem 2rem; border-radius: 8px; font-weight: 600; font-size: 1rem;">Demandez un devis gratuit</button>
+          <a href="#contact" style="display:inline-block;margin-top:1rem;">
+            <button style="background:var(--accent-color);color:white;padding:1rem 2rem;border-radius:8px;font-weight:600;font-size:1rem;">Demandez un devis gratuit</button>
           </a>
         </div>
         <div class="hero-image animate-right">
@@ -434,7 +495,7 @@
           <div class="service-content">
             <h3>Études Géophysiques</h3>
             <p>Exploration professionnelle avec équipements modernes</p>
-            <button class="service-btn" onclick="toggleServiceDetails(this)"> Découvrir comment nous trouvons l'eau</button>
+            <button class="service-btn" onclick="toggleServiceDetails(this)">Découvrir comment nous trouvons l'eau</button>
           </div>
           <div class="service-details">
             <p>Avant tout forage, une étude géophysique est indispensable pour identifier avec précision les zones les plus favorables à l'implantation d'un forage. Notre équipe réalise des prospections électriques et électromagnétiques du sous-sol afin de cartographier les nappes phréatiques, évaluer leur profondeur, leur épaisseur et estimer leur potentiel en eau.</p>
@@ -515,12 +576,11 @@
         <div class="service-card animate-slide-bounce" style="animation-delay:0.5s;">
           <div class="service-image"><img src="img/entretien.jpeg" alt="Entretien et maintenance"></div>
           <div class="service-content">
-            <h3>Entretien & Maintenance</h3>
+            <h3>Entretien &amp; Maintenance</h3>
             <button class="service-btn" onclick="toggleServiceDetails(this)">Voir nos services d'entretien</button>
           </div>
           <div class="service-details">
-            <p>L'intérieur de votre réservoir vous surprendrait.
-                Un réservoir non entretenu devient en quelques mois un foyer de bactéries, rouille, moisissures et dépôts toxiques. L'eau stockée se contamine silencieusement — même si elle paraît propre au robinet. HYDREAUSOL SARL assure le nettoyage, la désinfection et la remise en état de vos châteaux d'eau et cubitainers.</p>
+            <p>L'intérieur de votre réservoir vous surprendrait. Un réservoir non entretenu devient en quelques mois un foyer de bactéries, rouille, moisissures et dépôts toxiques. L'eau stockée se contamine silencieusement — même si elle paraît propre au robinet. HYDREAUSOL SARL assure le nettoyage, la désinfection et la remise en état de vos châteaux d'eau et cubitainers.</p>
           </div>
         </div>
       </div>
@@ -625,23 +685,23 @@
           <div class="portfolio-overlay"><h3>Installations</h3><p>Plomberie professionnelle</p></div>
         </div>
         <div class="portfolio-item animate" style="animation-delay:0.5s;">
-          <img src="img/r1.jpeg" alt="Plomberie">
+          <img src="img/r1.jpeg" alt="Réalisation 1">
           <div class="portfolio-overlay"><h3>Installations</h3><p>Plomberie professionnelle</p></div>
         </div>
         <div class="portfolio-item animate" style="animation-delay:0.5s;">
-          <img src="img/r2.jpeg" alt="Plomberie">
+          <img src="img/r2.jpeg" alt="Réalisation 2">
           <div class="portfolio-overlay"><h3>Installations</h3><p>Plomberie professionnelle</p></div>
         </div>
         <div class="portfolio-item animate" style="animation-delay:0.5s;">
-          <img src="img/r3.jpeg" alt="Plomberie">
+          <img src="img/r3.jpeg" alt="Réalisation 3">
           <div class="portfolio-overlay"><h3>Installations</h3><p>Plomberie professionnelle</p></div>
         </div>
         <div class="portfolio-item animate" style="animation-delay:0.5s;">
-          <img src="img/r4.jpeg" alt="Plomberie">
+          <img src="img/r4.jpeg" alt="Réalisation 4">
           <div class="portfolio-overlay"><h3>Installations</h3><p>Plomberie professionnelle</p></div>
         </div>
         <div class="portfolio-item animate" style="animation-delay:0.5s;">
-          <img src="img/r5.jpeg" alt="Plomberie">
+          <img src="img/r5.jpeg" alt="Réalisation 5">
           <div class="portfolio-overlay"><h3>Installations</h3><p>Plomberie professionnelle</p></div>
         </div>
       </div>
@@ -847,8 +907,8 @@
         </div>
         <div class="footer-section">
           <h3>Contact</h3>
-          <p><i class="fa fa-map-marker-alt" style="margin-right:6px;color:var(--secondary-color);"></i> Cameroun, Yaoundé - Douala</p>
-          <p><i class="fa fa-phone-alt" style="margin-right:6px;color:var(--secondary-color);"></i> <a href="tel:+237673249694">+237 673 249 694</a></p>
+          <p><i class="fa fa-map-marker" style="margin-right:6px;color:var(--secondary-color);"></i> Cameroun, Yaoundé - Douala</p>
+          <p><i class="fa fa-phone" style="margin-right:6px;color:var(--secondary-color);"></i> <a href="tel:+237673249694">+237 673 249 694</a></p>
           <p><i class="fa fa-envelope" style="margin-right:6px;color:var(--secondary-color);"></i> <a href="mailto:hydrauenvironnement@gmail.com">hydrauenvironnement@gmail.com</a></p>
         </div>
       </div>
@@ -869,7 +929,6 @@
 
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script>
-    /* SERVICE DETAILS TOGGLE */
     function toggleServiceDetails(button) {
       var card = button.closest('.service-card');
       var details = card.querySelector('.service-details');
@@ -891,12 +950,10 @@
     }
 
     $(document).ready(function () {
-      /* Header scroll */
       $(window).scroll(function () {
         $('#header').toggleClass('scrolled', $(this).scrollTop() > 50);
       });
 
-      /* Mobile menu */
       var menuToggle = $('#menuToggle');
       var mobileNav = $('#mobileNav');
       menuToggle.click(function () {
@@ -910,7 +967,6 @@
         }
       });
 
-      /* Scroll animations */
       var animationQueue = [];
       var isAnimating = false;
       function handleScroll() {
@@ -950,36 +1006,25 @@
       window.addEventListener('scroll', function(){ if(!ticking){ requestAnimationFrame(function(){ handleScroll(); ticking=false; }); ticking=true; } }, { passive: true });
       handleScroll();
 
-      /* Back to top */
       var backToTop = $('#backToTop');
       $(window).scroll(function(){ backToTop.toggleClass('show', $(this).scrollTop() > 200); });
       backToTop.click(function(){ $('html, body').animate({ scrollTop: 0 }, 800); });
 
-      /* Smooth scroll */
       $('a[href^="#"]').click(function(e) {
         var target = $(this.getAttribute('href'));
-        if (target.length) { $('html, body').animate({ scrollTop: target.offset().top - 70 }, 800); }
+        if (target.length) { $('html, body').animate({ scrollTop: target.offset().top - 63 }, 800); }
       });
 
-      /* ============================================================
-         AUTO-SCROLL HORIZONTAL — même logique pour les 3 sliders
-         portfolio, références, témoignages
-         ============================================================ */
       function initAutoScroll(selector, stepPx, intervalMs) {
         var $el = $(selector);
         if (!$el.length) return;
         setInterval(function () {
           var el = $el[0];
           var max = el.scrollWidth - el.clientWidth;
-          if (max <= 0) return; // pas assez d'items pour scroller
+          if (max <= 0) return;
           var atEnd = Math.ceil(el.scrollLeft) >= Math.floor(max) - 1;
-          if (atEnd) {
-            $el.animate({ scrollLeft: 0 }, 500);
-          } else {
-            var next = el.scrollLeft + stepPx;
-            if (next > max) next = max;
-            $el.animate({ scrollLeft: next }, 500);
-          }
+          if (atEnd) { $el.animate({ scrollLeft: 0 }, 500); }
+          else { var next = el.scrollLeft + stepPx; if (next > max) next = max; $el.animate({ scrollLeft: next }, 500); }
         }, intervalMs);
       }
 
@@ -987,7 +1032,6 @@
       initAutoScroll('#referencesGrid',   260, 3500);
       initAutoScroll('#testimonialsGrid', 360, 4500);
 
-      /* Form submission */
       $('form').submit(function(e) {
         e.preventDefault();
         var name=$('#name').val(), email=$('#email').val(), phone=$('#phone').val(), subject=$('#subject').val(), message=$('#message').val();
