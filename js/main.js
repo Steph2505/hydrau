@@ -1,4 +1,29 @@
-
+    (function(){
+      emailjs.init({ publicKey: "N469QWuQ0w5xk269j" });
+    })();
+      // ── Modal open / close ────────────────────────────────────────
+  function openDevisModal() {
+    var modal = document.getElementById('devisModal');
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+ 
+  function closeDevisModal() {
+    var modal = document.getElementById('devisModal');
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+ 
+  function handleModalOverlayClick(e) {
+    if (e.target === document.getElementById('devisModal')) {
+      closeDevisModal();
+    }
+  }
+ 
+  // Fermer avec Échap
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeDevisModal();
+  });
     function toggleServiceDetails(button) {
       var card = button.closest('.service-card');
       var details = card.querySelector('.service-details');
@@ -102,16 +127,69 @@
       initAutoScroll('#referencesGrid',   260, 3500);
       initAutoScroll('#testimonialsGrid', 360, 4500);
 
-      $('form').submit(function(e) {
-        e.preventDefault();
-        var name=$('#name').val(), email=$('#email').val(), phone=$('#phone').val(), message=$('#message').val();
-        var formMessage = $('#form-message');
-        if (name && email && phone && message) {
-          formMessage.html('<i class="fa fa-check-circle" style="margin-right:6px;"></i>Message envoyé ! Nous vous recontacterons bientôt.').show().css('color','#4CAF50');
-          $('form')[0].reset();
-          setTimeout(function(){ formMessage.fadeOut(); }, 5000);
-        } else {
-          formMessage.html('<i class="fa fa-times-circle" style="margin-right:6px;"></i>Veuillez remplir tous les champs obligatoires.').show().css('color','#F94C4C');
-        }
-      });
+      $('#devisS').closest('form').submit(function(e) {
+          e.preventDefault();
+      
+          var name    = $('#name').val();
+          var email   = $('#email').val();
+          var phone   = $('#phone').val();
+          var message = $('#message').val();
+      
+          var btn        = document.getElementById('devisS');
+          var formMsg    = document.getElementById('form-message');
+      
+          // Validation
+          if (!name || !email || !phone || !message) {
+            $(formMsg)
+              .html('<i class="fa fa-times-circle" style="margin-right:6px;"></i>Veuillez remplir tous les champs obligatoires.')
+              .show()
+              .css('color', '#F94C4C');
+            return;
+          }
+      
+          // Feedback visuel — envoi en cours
+          btn.disabled = true;
+          btn.innerHTML = '<i class="fa fa-spinner fa-spin" style="margin-right:8px;"></i>Envoi en cours…';
+          $(formMsg).hide();
+      
+          // Envoi via EmailJS
+          // Les variables du template doivent correspondre aux attributs name= du formulaire :
+          //   {{name}}    →  input name="name"
+          //   {{email}}   →  input name="email"
+          //   {{phone}}   →  input name="phone"
+          //   {{message}} →  textarea name="message"
+          emailjs.sendForm('service_mkhqtjj', 'template_u4vg5gd', e.target)
+            .then(function() {
+              // Succès
+              btn.innerHTML = '<i class="fa fa-check" style="margin-right:8px;"></i>Message envoyé !';
+              btn.style.background = 'linear-gradient(135deg,#4CAF50,#2e7d32)';
+      
+              $(formMsg)
+                .html('<i class="fa fa-check-circle" style="margin-right:6px;"></i>Message envoyé ! Nous vous recontacterons bientôt.')
+                .show()
+                .css('color', '#4CAF50');
+      
+              $('form')[0].reset();
+      
+              // Réinitialiser le bouton après 4s
+              setTimeout(function() {
+                btn.disabled = false;
+                btn.innerHTML = '<i class="fa fa-paper-plane" style="margin-right:8px;"></i>Envoyer le message';
+                btn.style.background = '';
+                $(formMsg).fadeOut();
+              }, 4000);
+      
+            }, function(error) {
+              // Échec
+              btn.disabled = false;
+              btn.innerHTML = '<i class="fa fa-paper-plane" style="margin-right:8px;"></i>Envoyer le message';
+      
+              $(formMsg)
+                .html('<i class="fa fa-times-circle" style="margin-right:6px;"></i>Erreur d\'envoi. Réessayez ou appelez-nous directement.')
+                .show()
+                .css('color', '#F94C4C');
+      
+              console.error('EmailJS error:', error);
+            });
+        });
     });
